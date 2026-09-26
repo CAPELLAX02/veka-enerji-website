@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@source "../*.html";
+@source "../partials";
+@source "../assets/js";
+
+@custom-variant hocus (&:hover, &:focus-visible);
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Brand navy (logo #122438) */
+  --color-navy-50: #f3f6f9;
+  --color-navy-100: #e6ecf2;
+  --color-navy-200: #c9d5e1;
+  --color-navy-300: #9fb2c6;
+  --color-navy-400: #6e87a3;
+  --color-navy-500: #4b6583;
+  --color-navy-600: #354d69;
+  --color-navy-700: #243a54;
+  --color-navy-800: #182c43;
+  --color-navy-900: #122438;
+  --color-navy-950: #0a1624;
+
+  /* Brand teal (logo #0897b0) */
+  --color-brand-50: #ebfbfd;
+  --color-brand-100: #cdf3f8;
+  --color-brand-200: #a1e7f1;
+  --color-brand-300: #62d3e5;
+  --color-brand-400: #22b6cf;
+  --color-brand-500: #0897b0;
+  --color-brand-600: #0a7a93;
+  --color-brand-700: #0f6277;
+  --color-brand-800: #145163;
+  --color-brand-900: #164454;
+  --color-brand-950: #072c38;
+
+  --color-sun-300: #fcd57a;
+  --color-sun-400: #fbbf24;
+  --color-sun-500: #f5a524;
+
+  /* Project type colours — shared by map markers, chips and charts */
+  --color-ges: #f5a524;
+  --color-res: #22b6cf;
+  --color-hes: #3b82f6;
+  --color-tm: #8b5cf6;
+  --color-enh: #10b981;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-kenburns: kenburns 14s ease-out both;
+  --animate-ping-slow: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-progress: progress var(--slide-duration, 7s) linear forwards;
+
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.12); }
+    to { transform: scale(1); }
+  }
+  @keyframes ping-slow {
+    0% { transform: scale(1); opacity: 0.7; }
+    80%, 100% { transform: scale(3.2); opacity: 0; }
+  }
+  @keyframes progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-white font-sans text-navy-700 antialiased;
+    font-feature-settings: "ss01";
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-navy-900;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { @apply bg-brand-500 text-white; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand-500; }
+  [x-cloak] { display: none !important; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+
+  .icon { @apply inline-block size-5 shrink-0; }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-3 font-mono text-xs font-medium tracking-[0.18em] text-brand-600 uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-current;
+  }
+  .eyebrow--light { @apply text-brand-300; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-300;
+  }
+  .btn .icon { @apply size-4 transition-transform duration-300; }
+  .btn:hover .icon--arrow { @apply translate-x-1; }
+  .btn-primary { @apply bg-brand-500 text-white shadow-lg shadow-brand-500/25 hover:bg-brand-600; }
+  .btn-dark { @apply bg-navy-900 text-white hover:bg-navy-800; }
+  .btn-light { @apply bg-white text-navy-900 hover:bg-brand-50; }
+  .btn-outline { @apply border border-navy-200 text-navy-900 hover:border-navy-900; }
+  .btn-outline-light { @apply border border-white/30 text-white backdrop-blur-sm hover:border-white hover:bg-white/10; }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-brand-600 transition hover:text-brand-700;
+  }
+  .link-arrow .icon { @apply size-4 transition-transform duration-300; }
+  .link-arrow:hover .icon { @apply translate-x-1; }
+
+  .card-lift { @apply transition duration-500 ease-out-expo hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy-900/10; }
+
+  /* Blueprint grid used on dark sections */
+  .bg-blueprint {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-blueprint-dark {
+    background-image:
+      linear-gradient(to right, rgb(18 36 56 / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(18 36 56 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .prose-veka { @apply space-y-5 text-[17px] leading-relaxed text-navy-600; }
+  .prose-veka strong { @apply font-semibold text-navy-900; }
+
+  .form-field {
+    @apply block w-full rounded-xl border border-navy-200 bg-white px-4 py-3 text-navy-900 placeholder:text-navy-400 transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 focus:outline-none;
+  }
+  .form-label { @apply mb-2 block text-sm font-medium text-navy-800; }
+
+  .chip {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded-full border border-navy-200 bg-white px-4 py-2 text-sm font-medium text-navy-700 transition select-none hover:border-navy-400;
+  }
+  .chip[aria-pressed="true"] { @apply border-navy-900 bg-navy-900 text-white; }
+  .chip-dot { @apply size-2 rounded-full; }
+
+  /* Header states */
+  .site-header[data-state="top"] { @apply bg-transparent text-white; }
+  .site-header[data-state="scrolled"] { @apply bg-white/90 text-navy-900 shadow-[0_1px_0_rgb(18_36_56/0.08)] backdrop-blur-xl; }
+  .site-header[data-state="top"] { --logo-a: #fff; --logo-b: var(--color-brand-300); }
+  .site-header[data-state="top"] .logo-accent { @apply text-brand-300; }
+  .nav-link { @apply relative rounded-full px-3.5 py-2 text-[15px] font-medium opacity-90 transition hover:opacity-100; }
+  .nav-link::after {
+    content: "";
+    @apply absolute inset-x-3.5 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-brand-400 transition-transform duration-300;
+  }
+  .nav-link:hover::after, .nav-link[aria-current="page"]::after { @apply scale-x-100; }
+  .nav-link[aria-current="page"] { @apply opacity-100; }
+
+  .dropdown {
+    @apply invisible absolute top-full left-1/2 w-72 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition duration-300 ease-out-expo;
+  }
+  .has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown { @apply visible translate-y-0 opacity-100; }
+
+  /* Maps */
+  .map-provinces path {
+    fill: var(--color-navy-100);
+    stroke: #fff;
+    stroke-width: 0.8;
+    transition: fill 0.3s;
+  }
+  .map-provinces path.is-active { fill: var(--color-brand-100); }
+  .map-provinces path:hover { fill: var(--color-navy-200); }
+  .map-provinces path.is-active:hover { fill: var(--color-brand-200); }
+  .map-dots { fill: none; stroke: var(--color-navy-200); stroke-width: 3.4; stroke-linecap: round; }
+  .map-dots--home { stroke: var(--color-brand-300); }
+
+  .map-dark .map-provinces path { fill: rgb(255 255 255 / 0.06); stroke: var(--color-navy-900); }
+  .map-dark .map-provinces path.is-active { fill: rgb(34 182 207 / 0.22); }
+  .map-dark .map-provinces path:hover { fill: rgb(255 255 255 / 0.12); }
+  .map-dark .map-dots { stroke: rgb(255 255 255 / 0.14); }
+  .map-dark .map-dots--home { stroke: var(--color-brand-400); }
+}
+
+@layer utilities {
+  .text-shadow-soft { text-shadow: 0 2px 24px rgb(10 22 36 / 0.35); }
+  .mask-fade-x { mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent); }
+}
+
+/* Scroll reveal — only hidden when JS is running, so content never disappears without it */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal="fade"] { transform: none; }
+.js [data-reveal="scale"] { transform: scale(0.96); }
+.js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}

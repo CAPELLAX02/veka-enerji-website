@@ -1,0 +1,35 @@
+{
+  "name": "veka-enerji-website",
+  "version": "1.0.0",
+  "description": "VEKA Enerji kurumsal web sitesi",
+  "scripts": {
+    "build:maps": "node scripts/build-maps.mjs",
+    "build:html": "node scripts/build-html.mjs",
+    "build:css": "tailwindcss -i src/styles.css -o assets/css/styles.css --minify",
+    "build": "npm run build:html && npm run build:css",
+    "watch:css": "tailwindcss -i src/styles.css -o assets/css/styles.css --watch",
+    "watch:html": "node --watch-path=partials --watch-path=scripts scripts/build-html.mjs",
+    "serve": "npx --yes serve -l 3000 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CAPELLAX02/veka-enerji-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/CAPELLAX02/veka-enerji-website/issues"
+  },
+  "homepage": "https://github.com/CAPELLAX02/veka-enerji-website#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "d3-geo": "^3.1.1",
+    "lucide-static": "^1.48.0",
+    "tailwindcss": "^4.3.3",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED"
+}
