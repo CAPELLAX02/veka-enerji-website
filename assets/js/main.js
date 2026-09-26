@@ -109,8 +109,19 @@
     let current = 0;
     let timer;
 
+    // Only the first slide ships with a src; the rest load just before they are needed
+    const ensureLoaded = (i) => {
+      const img = slides[i % slides.length]?.querySelector('img[data-src]');
+      if (img) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      }
+    };
+
     const show = (index) => {
       current = (index + slides.length) % slides.length;
+      ensureLoaded(current);
+      setTimeout(() => ensureLoaded(current + 1), 1500);
       slides.forEach((slide, i) => {
         const active = i === current;
         slide.dataset.active = String(active);
