@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VEKA Enerji | GES, RES, HES ve Trafo Merkezi Mühendisliği</title>
   <meta name="description" content="VEKA Enerji; güneş, rüzgar ve hidroelektrik santralleri, trafo merkezleri ve enerji nakil hatlarında fizibiliteden devreye almaya kadar mühendislik, proje, danışmanlık ve taahhüt hizmetleri sunar." />
-  <meta name="theme-color" content="#122438" />
   <link rel="canonical" href="https://vekaenerji.com/" />
+  <meta property="og:title" content="VEKA Enerji | Enerjide Yeni Bir Soluk" />
+  <meta property="og:description" content="GES, RES, HES, trafo merkezi ve enerji nakil hattı projelerinde uçtan uca mühendislik." />
+  <!-- @head -->
+  <meta name="theme-color" content="#122438" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:site_name" content="VEKA Enerji" />
-  <meta property="og:title" content="VEKA Enerji | Enerjide Yeni Bir Soluk" />
-  <meta property="og:description" content="GES, RES, HES, trafo merkezi ve enerji nakil hattı projelerinde uçtan uca mühendislik." />
   <meta property="og:image" content="https://vekaenerji.com/assets/img/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
@@ -20,11 +21,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="preload" as="image" href="assets/img/photos/hero-res.webp" fetchpriority="high" />
   <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/main.js" defer></script>
+  <!-- /@head -->
+  <link rel="preload" as="image" href="assets/img/photos/hero-res.webp" fetchpriority="high" />
   <script src="assets/js/projects-data.js" defer></script>
   <script src="assets/js/projects.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -443,17 +445,21 @@
   <section class="relative overflow-hidden bg-navy-950 py-24 text-white lg:py-32">
     <div class="bg-blueprint pointer-events-none absolute inset-0" aria-hidden="true"></div>
     <div class="pointer-events-none absolute -bottom-40 -left-40 size-[40rem] rounded-full bg-brand-500/10 blur-3xl" aria-hidden="true"></div>
-    <div class="container-x relative grid gap-14 lg:grid-cols-12 lg:items-center">
-      <div class="lg:col-span-4" data-reveal-stagger="100">
-        <p class="eyebrow eyebrow--light" data-reveal>Proje haritası</p>
-        <h2 class="mt-5 text-4xl leading-tight font-semibold tracking-tight text-white sm:text-5xl" data-reveal>Türkiye'nin dört bir yanında enerji üretiyoruz.</h2>
-        <p class="mt-6 text-navy-300" data-reveal>Hizmet verdiğimiz toplam kurulu güç</p>
-        <p class="mt-1 font-display text-6xl font-semibold tracking-tight text-white" data-reveal><span data-project-stat="mw-total">0</span> <span class="text-3xl text-brand-300">MW</span></p>
-        <div class="mt-8" data-project-breakdown data-theme="dark" data-reveal></div>
-        <a href="projeler.html" class="btn btn-light mt-10" data-reveal>Tüm projeleri görün <svg class="icon icon--arrow"><use href="#i-arrow-right" /></svg></a>
+    <div class="container-x relative">
+      <div class="grid gap-12 lg:grid-cols-12 lg:items-end">
+        <div class="lg:col-span-7" data-reveal-stagger="100">
+          <p class="eyebrow eyebrow--light" data-reveal>Proje haritası</p>
+          <h2 class="mt-5 text-4xl leading-tight font-semibold tracking-tight text-white sm:text-5xl" data-reveal>Türkiye'nin dört bir yanında enerji altyapısı kuruyoruz.</h2>
+          <a href="projeler.html" class="btn btn-light mt-9" data-reveal>Tüm projeleri görün <svg class="icon icon--arrow"><use href="#i-arrow-right" /></svg></a>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-sm lg:col-span-5" data-reveal>
+          <p class="text-sm text-navy-300">Hizmet verdiğimiz toplam kurulu güç</p>
+          <p class="mt-1 font-display text-6xl font-semibold tracking-tight text-white"><span data-project-stat="mw-total">0</span> <span class="text-3xl text-brand-300">MW</span></p>
+          <div class="mt-7" data-project-breakdown data-theme="dark"></div>
+        </div>
       </div>
 
-      <div class="lg:col-span-8" data-reveal="fade">
+      <div class="mt-16" data-reveal="fade">
         <div class="map-dark relative" data-project-map data-view="tr">
           <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
             <div class="inline-flex rounded-full bg-white/5 p-1 ring-1 ring-white/10">

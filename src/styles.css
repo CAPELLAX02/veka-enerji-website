@@ -184,6 +184,9 @@
   .map-dots { fill: none; stroke: var(--color-navy-200); stroke-width: 3.4; stroke-linecap: round; }
   .map-dots--home { stroke: var(--color-brand-300); }
 
+  .map-route { animation: route-flow 1.2s linear infinite; }
+  @keyframes route-flow { to { stroke-dashoffset: -18; } }
+
   .map-dark .map-provinces path { fill: rgb(255 255 255 / 0.06); stroke: var(--color-navy-900); }
   .map-dark .map-provinces path.is-active { fill: rgb(34 182 207 / 0.22); }
   .map-dark .map-provinces path:hover { fill: rgb(255 255 255 / 0.12); }

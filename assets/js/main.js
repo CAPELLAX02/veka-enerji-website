@@ -64,6 +64,7 @@
     n.toLocaleString('tr-TR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
   const runCounter = (el) => {
+    el.dataset.counted = 'true';
     const target = Number(el.dataset.count);
     const decimals = Number(el.dataset.decimals || 0);
     if (reduceMotion || !Number.isFinite(target)) {
@@ -92,7 +93,7 @@
     { threshold: 0.4 },
   );
   const observeCounters = (root = document) => {
-    root.querySelectorAll('[data-count]').forEach((el) => counterObserver.observe(el));
+    root.querySelectorAll('[data-count]:not([data-counted])').forEach((el) => counterObserver.observe(el));
   };
   observeCounters();
   window.VEKA.observeCounters = observeCounters;

@@ -66,9 +66,15 @@
       obs.disconnect();
     }, { threshold: 0.4 }).observe(el);
   });
+  window.VEKA?.observeCounters();
 
   // --- Shared filter state ---------------------------------------------------------
-  const state = { type: 'all', status: 'all' };
+  // Initial filter can come from the URL, e.g. projeler.html?tur=GES&durum=devam
+  const params = new URLSearchParams(location.search);
+  const state = {
+    type: TYPES[params.get('tur')?.toUpperCase()] ? params.get('tur').toUpperCase() : 'all',
+    status: STATUS[params.get('durum')] ? params.get('durum') : 'all',
+  };
   const listeners = [];
   const matches = (p) => (state.type === 'all' || p.type === state.type) && (state.status === 'all' || p.status === state.status);
   const emit = () => listeners.forEach((fn) => fn(projects.filter(matches)));
@@ -77,6 +83,10 @@
     bar.querySelectorAll('[data-filter-type] [data-count-type]').forEach((el) => {
       const t = el.dataset.countType;
       el.textContent = t === 'all' ? projects.length : stats[`count-${t}`];
+    });
+    bar.querySelectorAll('[data-filter-type], [data-filter-status]').forEach((group) => {
+      const value = 'filterType' in group.dataset ? state.type : state.status;
+      group.querySelectorAll('[data-value]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.value === value)));
     });
     bar.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-value]');
@@ -190,7 +200,7 @@
       if (!tooltip) return;
       tooltip.innerHTML = html;
       tooltip.dataset.open = 'true';
-      const s = stage.getBoundingClientRect();
+      const s = root.getBoundingClientRect();
       const m = marker.getBoundingClientRect();
       const w = tooltip.offsetWidth;
       const h = tooltip.offsetHeight;
@@ -232,9 +242,10 @@
           line.setAttribute('points', p.route.map(([la, lo]) => P.xy(la, lo).join(',')).join(' '));
           line.setAttribute('fill', 'none');
           line.style.stroke = TYPES.ENH.color;
-          line.setAttribute('stroke-width', '3');
+          line.setAttribute('stroke-width', '3.5');
           line.setAttribute('stroke-linecap', 'round');
-          line.setAttribute('stroke-dasharray', '6 6');
+          line.setAttribute('stroke-dasharray', '2 7');
+          line.classList.add('map-route');
           svg.appendChild(line);
         });
 
@@ -247,7 +258,7 @@
           abroad.map((p) => markerHtml(p, ...P.xy(p.lat, p.lon))).join('') +
           (home.length
             ? `<button type="button" class="absolute -translate-x-1/2 -translate-y-1/2" style="${pct(hx, hy)}" data-home aria-label="Türkiye — ${home.length} proje, haritayı yakınlaştır">
-                 <span class="absolute inset-0 rounded-full bg-brand-400 animate-ping-slow"></span>
+                 <span class="absolute inset-2 rounded-full bg-brand-400 animate-ping-slow"></span>
                  <span class="relative grid size-11 place-items-center rounded-full bg-brand-500 font-display text-sm font-bold text-white shadow-lg ring-4 ring-white/80">${home.length}</span>
                </button>`
             : '');

@@ -13,11 +13,14 @@ const read = (p) => readFileSync(join(root, p), 'utf8');
 const pages = readdirSync(root).filter((f) => f.endsWith('.html'));
 const header = read('partials/header.html');
 const footer = read('partials/footer.html');
+const head = read('partials/head.html');
 
 function region(html, name, content) {
-  const re = new RegExp(`(<!-- @${name} -->)[\\s\\S]*?(<!-- /@${name} -->)`);
-  if (!re.test(html)) return html;
-  return html.replace(re, `$1\n${content.trim()}\n$2`);
+  const re = new RegExp(`([ \\t]*)(<!-- @${name} -->)[\\s\\S]*?(<!-- /@${name} -->)`);
+  return html.replace(re, (_, indent, open, close) => {
+    const body = content.trim().split('\n').map((l) => (l ? indent + l : l)).join('\n');
+    return `${indent}${open}\n${body}\n${indent}${close}`;
+  });
 }
 
 function markActive(html, key) {
@@ -34,6 +37,7 @@ const scanFiles = [
   ...pages,
   'partials/header.html',
   'partials/footer.html',
+  'partials/head.html',
   ...readdirSync(join(root, 'assets/js')).map((f) => `assets/js/${f}`),
 ];
 const used = new Set();
@@ -58,6 +62,7 @@ for (const page of pages) {
   let html = read(page);
   html = region(html, 'header', markActive(header, key));
   html = region(html, 'footer', footer);
+  html = region(html, 'head', head);
   html = region(html, 'sprite', sprite);
   writeFileSync(join(root, page), html);
 }
