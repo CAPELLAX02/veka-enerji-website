@@ -147,6 +147,27 @@
     show(0);
   }
 
+  // --- Scrollspy for in-page section navs -----------------------------------------
+  document.querySelectorAll('[data-scrollspy]').forEach((nav) => {
+    const links = [...nav.querySelectorAll('a[href^="#"]')];
+    const sections = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const setCurrent = (id) => {
+      links.forEach((a) => {
+        const active = a.getAttribute('href') === `#${id}`;
+        a.setAttribute('aria-current', String(active));
+        const track = a.closest('ul');
+        if (active && track.scrollWidth > track.clientWidth) {
+          track.scrollTo({ left: a.parentElement.offsetLeft - 16, behavior: 'smooth' });
+        }
+      });
+    };
+    const spy = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setCurrent(e.target.id)),
+      { rootMargin: '-45% 0px -50% 0px' },
+    );
+    sections.forEach((s) => spy.observe(s));
+  });
+
   // --- Marquee: duplicate the track so the loop is seamless ----------------------
   document.querySelectorAll('[data-marquee-clone]').forEach((clone) => {
     clone.innerHTML = clone.previousElementSibling.innerHTML;
