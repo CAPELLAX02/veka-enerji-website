@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vekaenerji.com/sitemap.xml
