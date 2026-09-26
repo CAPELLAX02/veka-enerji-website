@@ -227,9 +227,9 @@
       stage.appendChild(layer);
 
       const markerHtml = (p, x, y) => `
-        <button type="button" class="map-marker group/m absolute -translate-x-1/2 -translate-y-1/2 p-1.5 focus:outline-none" style="${pct(x, y)}" data-id="${p.id}" aria-label="${esc(p.name)} — ${esc(p.capacity)}">
-          ${p.status === 'devam' ? `<span class="absolute inset-1.5 rounded-full animate-ping-slow" style="background:${TYPES[p.type].color}"></span>` : ''}
-          <span class="relative block size-3.5 rounded-full ring-[2.5px] ring-white shadow-md transition-transform duration-300 group-hover/m:scale-150 group-focus-visible/m:scale-150" style="background:${TYPES[p.type].color}"></span>
+        <button type="button" class="map-marker group/m absolute -translate-x-1/2 -translate-y-1/2 p-1 focus:outline-none sm:p-1.5" style="${pct(x, y)}" data-id="${p.id}" aria-label="${esc(p.name)} — ${esc(p.capacity)}">
+          ${p.status === 'devam' ? `<span class="absolute inset-1 rounded-full animate-ping-slow sm:inset-1.5" style="background:${TYPES[p.type].color}"></span>` : ''}
+          <span class="relative block size-2.5 rounded-full ring-2 ring-white shadow-md sm:size-3.5 sm:ring-[2.5px] transition-transform duration-300 group-hover/m:scale-150 group-focus-visible/m:scale-150" style="background:${TYPES[p.type].color}"></span>
         </button>`;
 
       if (view === 'tr') {
