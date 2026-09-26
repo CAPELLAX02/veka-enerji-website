@@ -185,6 +185,16 @@
     clone.querySelectorAll('img').forEach((img) => (img.alt = ''));
   });
 
+  // --- Deep links: re-apply #hash once late content (maps, cards, fonts) has settled ---
+  if (location.hash.length > 1) {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) {
+      window.addEventListener('load', () => {
+        requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+      });
+    }
+  }
+
   // --- Misc ---------------------------------------------------------------------
   document.querySelectorAll('[data-year]').forEach((el) => {
     el.textContent = new Date().getFullYear();
