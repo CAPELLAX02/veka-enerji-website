@@ -19,7 +19,7 @@
   if (menu && toggle) {
     const setOpen = (open) => {
       menu.dataset.open = String(open);
-      menu.setAttribute('aria-hidden', String(!open));
+      menu.inert = !open;
       toggle.setAttribute('aria-expanded', String(open));
       document.documentElement.classList.toggle('overflow-hidden', open);
       if (open) close?.focus();

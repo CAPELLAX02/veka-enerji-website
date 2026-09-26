@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
@@ -126,7 +126,7 @@
   </div>
 </header>
 
-<div id="mobile-menu" class="invisible fixed inset-0 z-[55] flex flex-col bg-navy-950 text-white opacity-0 transition duration-500 ease-out-expo data-[open=true]:visible data-[open=true]:opacity-100 lg:hidden" data-open="false" aria-hidden="true">
+<div id="mobile-menu" class="invisible fixed inset-0 z-[55] flex flex-col bg-navy-950 text-white opacity-0 transition duration-500 ease-out-expo data-[open=true]:visible data-[open=true]:opacity-100 lg:hidden" data-open="false" inert>
   <div class="container-x flex h-20 shrink-0 items-center justify-between">
     <span class="font-display text-lg font-bold tracking-tight">VEKA <span class="text-brand-300">ENERJİ</span></span>
     <button type="button" id="menu-close" class="-mr-2 grid size-11 place-items-center rounded-full transition hover:bg-white/10" aria-label="Menüyü kapat">
@@ -184,7 +184,7 @@
         <p class="mt-6 text-sm text-navy-500">E-posta</p>
         <p class="mt-1 text-lg font-semibold text-navy-900 group-hover:text-brand-600">info@vekaenerji.com</p>
       </a>
-      <a href="https://www.google.com/maps/search/?api=1&query=A%C5%9Fa%C4%9F%C4%B1+%C3%96ve%C3%A7ler+Mahallesi+Lizbon+Caddesi+29%2F4+%C3%87ankaya+Ankara" target="_blank" rel="noopener" class="group card-lift rounded-3xl bg-white p-7 shadow-xl ring-1 shadow-navy-900/5 ring-navy-900/5" data-reveal>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=A%C5%9Fa%C4%9F%C4%B1+%C3%96ve%C3%A7ler+Mahallesi+Lizbon+Caddesi+29%2F4+%C3%87ankaya+Ankara" target="_blank" rel="noopener" class="group card-lift rounded-3xl bg-white p-7 shadow-xl ring-1 shadow-navy-900/5 ring-navy-900/5" data-reveal>
         <span class="grid size-12 place-items-center rounded-2xl bg-navy-900 text-white"><svg class="icon"><use href="#i-map-pin" /></svg></span>
         <p class="mt-6 text-sm text-navy-500">Adres</p>
         <p class="mt-1 font-semibold text-navy-900 group-hover:text-brand-600">Aşağı Öveçler Mah. Lizbon Cad. 29/4 Çankaya / Ankara</p>
@@ -208,11 +208,11 @@
         <form class="mt-10 grid gap-5 sm:grid-cols-2" data-mail-form data-mail-subject="Teklif / Bilgi Talebi" novalidate>
           <div>
             <label class="form-label" for="c-ad">Ad Soyad *</label>
-            <input class="form-field" id="c-ad" name="ad" data-label="Ad Soyad" autocomplete="name" required />
+            <input class="form-field" type="text" id="c-ad" name="ad" data-label="Ad Soyad" autocomplete="name" required />
           </div>
           <div>
             <label class="form-label" for="c-firma">Firma</label>
-            <input class="form-field" id="c-firma" name="firma" data-label="Firma" autocomplete="organization" />
+            <input class="form-field" type="text" id="c-firma" name="firma" data-label="Firma" autocomplete="organization" />
           </div>
           <div>
             <label class="form-label" for="c-eposta">E-posta *</label>
@@ -252,7 +252,7 @@
         <div class="sticky top-28 overflow-hidden rounded-[2rem] bg-navy-100 ring-1 ring-navy-900/5">
           <iframe
             title="VEKA Enerji ofis konumu"
-            src="https://www.google.com/maps?q=A%C5%9Fa%C4%9F%C4%B1+%C3%96ve%C3%A7ler+Mahallesi+Lizbon+Caddesi+29%2F4+%C3%87ankaya+Ankara&z=16&output=embed"
+            src="https://www.google.com/maps?q=A%C5%9Fa%C4%9F%C4%B1+%C3%96ve%C3%A7ler+Mahallesi+Lizbon+Caddesi+29%2F4+%C3%87ankaya+Ankara&amp;z=16&amp;output=embed"
             class="aspect-[4/5] w-full grayscale-[0.6] transition duration-700 hover:grayscale-0 lg:aspect-auto lg:h-[560px]"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -262,7 +262,7 @@
               <p class="font-semibold text-navy-900">VEKA Enerji — Merkez Ofis</p>
               <p class="text-sm text-navy-500">Çankaya / Ankara</p>
             </div>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=A%C5%9Fa%C4%9F%C4%B1+%C3%96ve%C3%A7ler+Mahallesi+Lizbon+Caddesi+29%2F4+%C3%87ankaya+Ankara" target="_blank" rel="noopener" class="btn btn-dark !px-4 !py-2.5"><svg class="icon"><use href="#i-route" /></svg>Yol tarifi</a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=A%C5%9Fa%C4%9F%C4%B1+%C3%96ve%C3%A7ler+Mahallesi+Lizbon+Caddesi+29%2F4+%C3%87ankaya+Ankara" target="_blank" rel="noopener" class="btn btn-dark !px-4 !py-2.5"><svg class="icon"><use href="#i-route" /></svg>Yol tarifi</a>
           </div>
         </div>
       </div>

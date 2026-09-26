@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
@@ -126,7 +126,7 @@
   </div>
 </header>
 
-<div id="mobile-menu" class="invisible fixed inset-0 z-[55] flex flex-col bg-navy-950 text-white opacity-0 transition duration-500 ease-out-expo data-[open=true]:visible data-[open=true]:opacity-100 lg:hidden" data-open="false" aria-hidden="true">
+<div id="mobile-menu" class="invisible fixed inset-0 z-[55] flex flex-col bg-navy-950 text-white opacity-0 transition duration-500 ease-out-expo data-[open=true]:visible data-[open=true]:opacity-100 lg:hidden" data-open="false" inert>
   <div class="container-x flex h-20 shrink-0 items-center justify-between">
     <span class="font-display text-lg font-bold tracking-tight">VEKA <span class="text-brand-300">ENERJİ</span></span>
     <button type="button" id="menu-close" class="-mr-2 grid size-11 place-items-center rounded-full transition hover:bg-white/10" aria-label="Menüyü kapat">
@@ -221,14 +221,14 @@
       <div class="space-y-4 lg:col-span-8" data-reveal-stagger="80">
         <details class="group rounded-3xl bg-white ring-1 ring-navy-900/5 transition open:shadow-xl open:shadow-navy-900/5" data-reveal>
           <summary class="flex cursor-pointer list-none items-center justify-between gap-6 p-7 [&::-webkit-details-marker]:hidden">
-            <div>
-              <h3 class="text-lg font-semibold">Elektrik Mühendisi — Trafo Merkezi Projelendirme</h3>
-              <p class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-navy-500">
+            <span class="block">
+              <span class="block font-display text-lg font-semibold text-navy-900">Elektrik Mühendisi — Trafo Merkezi Projelendirme</span>
+              <span class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-navy-500">
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-map-pin" /></svg>Ankara</span>
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-clock" /></svg>Tam zamanlı</span>
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-briefcase" /></svg>3+ yıl deneyim</span>
-              </p>
-            </div>
+              </span>
+            </span>
             <span class="grid size-10 shrink-0 place-items-center rounded-full bg-navy-50 text-navy-700 transition group-open:rotate-45 group-open:bg-brand-500 group-open:text-white"><svg class="icon size-5"><use href="#i-plus" /></svg></span>
           </summary>
           <div class="border-t border-navy-100 px-7 pt-6 pb-7 text-[15px] leading-relaxed text-navy-600">
@@ -243,14 +243,14 @@
         </details>
         <details class="group rounded-3xl bg-white ring-1 ring-navy-900/5 transition open:shadow-xl open:shadow-navy-900/5" data-reveal>
           <summary class="flex cursor-pointer list-none items-center justify-between gap-6 p-7 [&::-webkit-details-marker]:hidden">
-            <div>
-              <h3 class="text-lg font-semibold">İnşaat Mühendisi — Statik ve Çelik Tasarım</h3>
-              <p class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-navy-500">
+            <span class="block">
+              <span class="block font-display text-lg font-semibold text-navy-900">İnşaat Mühendisi — Statik ve Çelik Tasarım</span>
+              <span class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-navy-500">
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-map-pin" /></svg>Ankara</span>
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-clock" /></svg>Tam zamanlı</span>
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-briefcase" /></svg>2+ yıl deneyim</span>
-              </p>
-            </div>
+              </span>
+            </span>
             <span class="grid size-10 shrink-0 place-items-center rounded-full bg-navy-50 text-navy-700 transition group-open:rotate-45 group-open:bg-brand-500 group-open:text-white"><svg class="icon size-5"><use href="#i-plus" /></svg></span>
           </summary>
           <div class="border-t border-navy-100 px-7 pt-6 pb-7 text-[15px] leading-relaxed text-navy-600">
@@ -265,14 +265,14 @@
         </details>
         <details class="group rounded-3xl bg-white ring-1 ring-navy-900/5 transition open:shadow-xl open:shadow-navy-900/5" data-reveal>
           <summary class="flex cursor-pointer list-none items-center justify-between gap-6 p-7 [&::-webkit-details-marker]:hidden">
-            <div>
-              <h3 class="text-lg font-semibold">Saha Mühendisi — Taahhüt ve Montaj</h3>
-              <p class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-navy-500">
+            <span class="block">
+              <span class="block font-display text-lg font-semibold text-navy-900">Saha Mühendisi — Taahhüt ve Montaj</span>
+              <span class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-navy-500">
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-map-pin" /></svg>Proje sahaları</span>
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-clock" /></svg>Tam zamanlı</span>
                 <span class="inline-flex items-center gap-1.5"><svg class="icon size-4"><use href="#i-briefcase" /></svg>2+ yıl deneyim</span>
-              </p>
-            </div>
+              </span>
+            </span>
             <span class="grid size-10 shrink-0 place-items-center rounded-full bg-navy-50 text-navy-700 transition group-open:rotate-45 group-open:bg-brand-500 group-open:text-white"><svg class="icon size-5"><use href="#i-plus" /></svg></span>
           </summary>
           <div class="border-t border-navy-100 px-7 pt-6 pb-7 text-[15px] leading-relaxed text-navy-600">
@@ -308,7 +308,7 @@
       <form class="grid gap-5 rounded-[2rem] bg-white p-8 ring-1 ring-navy-900/8 sm:grid-cols-2 sm:p-10 lg:col-span-8" data-mail-form data-mail-subject="Kariyer Başvurusu" novalidate data-reveal>
         <div>
           <label class="form-label" for="k-ad">Ad Soyad *</label>
-          <input class="form-field" id="k-ad" name="ad" data-label="Ad Soyad" autocomplete="name" required />
+          <input class="form-field" type="text" id="k-ad" name="ad" data-label="Ad Soyad" autocomplete="name" required />
         </div>
         <div>
           <label class="form-label" for="k-eposta">E-posta *</label>
