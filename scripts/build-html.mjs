@@ -2,6 +2,7 @@
 //  - injects partials/header.html and partials/footer.html between their markers
 //  - marks the current page's nav links with aria-current="page"
 //  - builds an inline Lucide sprite containing only the icons referenced as #i-<name>
+//  - renders the reference logos from data/referanslar.json
 //
 // Pages stay plain, deployable HTML; this script only rewrites the marked regions.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
@@ -30,6 +31,46 @@ function markActive(html, key) {
     return `<${tag}${clean} data-nav="${keys}"${active ? ' aria-current="page"' : ''}>`;
   });
 }
+
+// --- references -------------------------------------------------------------
+const refs = JSON.parse(read('data/referanslar.json'));
+const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+const logoSrc = (file) => `assets/img/references/${file}`;
+
+const firmTile = (r) => `<li class="group flex aspect-[3/2] flex-col items-center justify-center gap-4 rounded-3xl border border-navy-100 bg-white p-6 text-center transition hover:border-navy-200 hover:shadow-xl hover:shadow-navy-900/5" data-reveal>
+  ${r.logo
+    ? `<img src="${logoSrc(r.logo)}" alt="${esc(r.ad)}" class="${r.boy || 'max-h-10'} max-w-[75%] object-contain opacity-70 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0" loading="lazy" />
+  <span class="text-xs font-medium text-navy-400 transition group-hover:text-navy-700">${esc(r.ad)}</span>`
+    : `<span class="font-display text-lg leading-tight font-bold tracking-[0.14em] text-navy-400 uppercase transition group-hover:text-navy-900">${esc(r.ad)}</span>`}
+</li>`;
+
+const marqueeTile = (r) =>
+  `<li class="grid h-24 w-48 shrink-0 place-items-center rounded-2xl border border-navy-100 px-8"><img src="${logoSrc(r.logo)}" alt="${esc(r.ad)}" class="${r.boy || 'max-h-10'} max-w-full object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0" loading="lazy" /></li>`;
+
+const publicTile = (r) => `<li class="card-lift flex flex-col items-center rounded-[2rem] bg-white p-10 text-center ring-1 ring-navy-900/5" data-reveal>
+  <div class="grid h-24 place-items-center">${r.logo
+    ? `<img src="${logoSrc(r.logo)}" alt="${esc(r.aciklama)}" class="h-20 w-auto max-w-full object-contain" loading="lazy" />`
+    : `<span class="font-display text-4xl font-bold tracking-[0.14em] text-navy-800">${esc(r.ad)}</span>`}</div>
+  <h3 class="mt-8 text-lg font-semibold">${esc(r.ad)}</h3>
+  <p class="mt-1 text-sm text-navy-500">${esc(r.aciklama)}</p>
+</li>`;
+
+const partnerTile = (r) => `<li data-reveal>
+  <a href="${r.site}" target="_blank" rel="noopener" class="group card-lift flex h-full flex-col items-center justify-between gap-8 rounded-[2rem] bg-white p-10 text-center ring-1 ring-navy-900/5">
+    <span class="grid h-28 place-items-center"><img src="${logoSrc(r.logo)}" alt="${esc(r.ad)}" class="h-24 w-auto max-w-full object-contain" loading="lazy" /></span>
+    <span>
+      <span class="block text-lg font-semibold text-navy-900">${esc(r.ad)}</span>
+      <span class="mt-1 inline-flex items-center gap-1.5 text-sm text-brand-600 transition group-hover:text-brand-700">${esc(r.site.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}<svg class="icon size-4"><use href="#i-arrow-up-right" /></svg></span>
+    </span>
+  </a>
+</li>`;
+
+const refRegions = {
+  'refs-firms': refs.firmalar.map(firmTile).join('\n'),
+  'refs-public': refs.kurumlar.map(publicTile).join('\n'),
+  'refs-partners': refs.cozumOrtaklari.map(partnerTile).join('\n'),
+  'refs-marquee': refs.firmalar.filter((r) => r.logo).slice(0, refs.bantAdedi).map(marqueeTile).join('\n'),
+};
 
 // --- icon sprite ------------------------------------------------------------
 const iconDir = join(root, 'node_modules/lucide-static/icons');
@@ -64,6 +105,7 @@ for (const page of pages) {
   html = region(html, 'footer', footer);
   html = region(html, 'head', head);
   html = region(html, 'sprite', sprite);
+  for (const [name, content] of Object.entries(refRegions)) html = region(html, name, content);
   writeFileSync(join(root, page), html);
 }
 
