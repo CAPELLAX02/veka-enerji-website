@@ -10,7 +10,7 @@ VEKA Enerji'nin kurumsal web sitesi. Düz HTML + Tailwind CSS ile yazılmış, d
 | `hakkimizda.html` | Hakkımızda, misyon, vizyon, değerler, kamu kurumları |
 | `hizmetler.html` | TM, RES, GES, HES, EİH (enerji iletim hatları), taahhüt, inşaat, lisanssız üretim |
 | `projeler.html` | Tamamlanan / devam eden projeler, tür filtreleri, arama, Türkiye & dünya haritası, kurulu güç dağılımı |
-| `referanslar.html` | Firmalar (sektördeki büyüklüğe göre), kamu kurumları, çözüm ortakları |
+| `referanslar.html` | Firmalar (sektördeki büyüklüğe göre) ve kamu kurumları |
 | `ekibimiz.html` | Ekip yaklaşımı, rakamlar ve uzmanlık alanları |
 | `kariyer.html` | Açık pozisyon (TM saha denetmeni), Kariyer.net yönlendirmesi ve başvuru formu |
 | `iletisim.html` | İletişim bilgileri, teklif formu, harita |
@@ -51,7 +51,7 @@ Projeler sayfası adres çubuğundan filtrelenebilir: `projeler.html?tur=TM`, `p
 
 ### Referanslar — `data/referanslar.json`
 
-`firmalar` listesi **sektördeki büyüklüğe göre** sıralıdır; sırayı değiştirmek için satırların yerini değiştirmeniz yeterli. Logo dosyaları `assets/img/references/` altındadır; `logo` alanı boş olan firma, adıyla (yazı olarak) gösterilir. Ana sayfadaki kayan logo bandı aynı listenin ilk `bantAdedi` logolu firmasından oluşur. `kurumlar` ve `cozumOrtaklari` da aynı dosyadadır.
+`firmalar` listesi **sektördeki büyüklüğe göre** sıralıdır; sırayı değiştirmek için satırların yerini değiştirmeniz yeterli. Logo dosyaları `assets/img/references/` altındadır; `logo` alanı boş olan firma, adıyla (yazı olarak) gösterilir. Ana sayfadaki kayan logo bandı aynı listenin ilk `bantAdedi` logolu firmasından oluşur. Kamu kurumları (`kurumlar`) da aynı dosyadadır.
 
 ### Formlar
 
@@ -60,7 +60,7 @@ Projeler sayfası adres çubuğundan filtrelenebilir: `projeler.html?tur=TM`, `p
 ## Teyit bekleyenler
 
 - [ ] `Olası eşleşme` işaretli 10 projenin kapasite (MW) bilgileri — teyit edilene kadar gösterilmiyor ve toplama katılmıyor.
-- [ ] Projelerdeki `yil` ve `durum` alanları referans tablosunda "tahmini" olarak işaretli; durum bilgisinin firma kayıtlarıyla karşılaştırılması.
+- [ ] Projelerdeki `yil` ve `durum` alanları referans tablosunda "tahmini" olarak işaretli (400 kV projelerin tamamı firma bilgisiyle "Tamamlanan" olarak güncellendi).
 - [ ] Gülsan Korkuteli GES — tabloda ÇED sürecinin sonlandırıldığı notu var; kapasite gizlendi (`gucGosterme`).
 - [ ] Gogni RES (Gürcistan) — VEKA'nın hizmet kapsamı ("Mühendislik ve proje hizmetleri" olarak yazıldı).
 - [ ] New Azadi 132 kV GIS TM (Irak) — konum bilinmediği için haritada gösterilmiyor.
