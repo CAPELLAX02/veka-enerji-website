@@ -55,20 +55,9 @@ const publicTile = (r) => `<li class="card-lift flex flex-col items-center round
   <p class="mt-1 text-sm text-navy-500">${esc(r.aciklama)}</p>
 </li>`;
 
-const partnerTile = (r) => `<li data-reveal>
-  <a href="${r.site}" target="_blank" rel="noopener" class="group card-lift flex h-full flex-col items-center justify-between gap-8 rounded-[2rem] bg-white p-10 text-center ring-1 ring-navy-900/5">
-    <span class="grid h-28 place-items-center"><img src="${logoSrc(r.logo)}" alt="${esc(r.ad)}" class="h-24 w-auto max-w-full object-contain" loading="lazy" /></span>
-    <span>
-      <span class="block text-lg font-semibold text-navy-900">${esc(r.ad)}</span>
-      <span class="mt-1 inline-flex items-center gap-1.5 text-sm text-brand-600 transition group-hover:text-brand-700">${esc(r.site.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}<svg class="icon size-4"><use href="#i-arrow-up-right" /></svg></span>
-    </span>
-  </a>
-</li>`;
-
 const refRegions = {
   'refs-firms': refs.firmalar.map(firmTile).join('\n'),
   'refs-public': refs.kurumlar.map(publicTile).join('\n'),
-  'refs-partners': refs.cozumOrtaklari.map(partnerTile).join('\n'),
   'refs-marquee': refs.firmalar.filter((r) => r.logo).slice(0, refs.bantAdedi).map(marqueeTile).join('\n'),
 };
 

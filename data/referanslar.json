@@ -50,9 +50,5 @@
     { "ad": "Enerji Bakanlığı", "aciklama": "T.C. Enerji ve Tabii Kaynaklar Bakanlığı", "logo": "etkb.png" },
     { "ad": "Çevre ve Şehircilik Bakanlığı", "aciklama": "T.C. Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", "logo": "csb.svg" }
   ],
-  "cozumOrtaklari": [
-    { "ad": "PAM Harita Enerji", "logo": "pam-harita.svg", "site": "https://www.pamharita.com/" },
-    { "ad": "HSS Enerji", "logo": "hss-enerji.png", "site": "https://hssenerji.com/" }
-  ],
   "bantAdedi": 18
 }
