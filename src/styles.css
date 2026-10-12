@@ -3,6 +3,7 @@
 @source "../*.html";
 @source "../partials";
 @source "../assets/js";
+@source "../data";
 
 @custom-variant hocus (&:hover, &:focus-visible);
 
@@ -46,7 +47,7 @@
   --color-res: #22b6cf;
   --color-hes: #3b82f6;
   --color-tm: #8b5cf6;
-  --color-enh: #10b981;
+  --color-eih: #10b981;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
