@@ -64,7 +64,7 @@ Projeler sayfası adres çubuğundan filtrelenebilir: `projeler.html?tur=TM`, `p
 - [ ] Gülsan Korkuteli GES — tabloda ÇED sürecinin sonlandırıldığı notu var; kapasite gizlendi (`gucGosterme`).
 - [ ] Gogni RES (Gürcistan) — VEKA'nın hizmet kapsamı ("Mühendislik ve proje hizmetleri" olarak yazıldı).
 - [ ] New Azadi 132 kV GIS TM (Irak) — konum bilinmediği için haritada gösterilmiyor.
-- [ ] Logosu bulunamayan firmalar (yazı olarak gösteriliyor): Yıldızlar Holding, Mensis Enerji, Barkan Enerji, Yander Elektrik, Best Elektrik, Betaş, Kırkağaç Enerji, TCDD.
+- [ ] Logosu bulunamayan firmalar (yazı olarak gösteriliyor): Mensis Enerji, Barkan Enerji, Yander Elektrik, Best Elektrik.
 - [ ] Kariyer.net'teki ilanın doğrudan bağlantısı (şu an Kariyer.net'te "veka enerji" aramasına gidiyor).
 - [ ] KVKK aydınlatma metni hazırlanınca formlardaki onay kutularına bağlantı eklenmesi.
 

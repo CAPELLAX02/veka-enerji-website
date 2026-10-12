@@ -1163,7 +1163,7 @@ window.VEKA_PROJECTS = [
  {
   "id": 41,
   "name": "400 kV Karaman GIS TM",
-  "client": "Yıldızlar Holding",
+  "client": "Yıldızlar SSS Holding",
   "type": "TM",
   "types": [
    "TM"
@@ -1192,7 +1192,7 @@ window.VEKA_PROJECTS = [
  {
   "id": 42,
   "name": "Karaman DRES 400 kV GIS TM",
-  "client": "Yıldızlar Holding",
+  "client": "Yıldızlar SSS Holding",
   "type": "RES",
   "types": [
    "RES",
@@ -1528,7 +1528,7 @@ window.VEKA_PROJECTS = [
  {
   "id": 54,
   "name": "Kerem RES TM",
-  "client": "Kırkağaç Enerji",
+  "client": "Kırkağaç Enerji (Gama Enerji)",
   "type": "RES",
   "types": [
    "RES",
@@ -1936,7 +1936,7 @@ window.VEKA_PROJECTS = [
  {
   "id": 68,
   "name": "Kütahya RES TM",
-  "client": "İçdaş",
+  "client": "İçtaş",
   "type": "RES",
   "types": [
    "RES",

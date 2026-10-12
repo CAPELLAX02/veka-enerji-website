@@ -1111,7 +1111,7 @@
   {
     "id": 41,
     "baslik": "400 kV Karaman GIS TM",
-    "musteri": "Yıldızlar Holding",
+    "musteri": "Yıldızlar SSS Holding",
     "kategori": "TM",
     "santralTuru": "TM",
     "il": "Karaman",
@@ -1139,7 +1139,7 @@
   {
     "id": 42,
     "baslik": "Karaman DRES 400 kV GIS TM",
-    "musteri": "Yıldızlar Holding",
+    "musteri": "Yıldızlar SSS Holding",
     "kategori": "RES",
     "santralTuru": "RES",
     "il": "Karaman",
@@ -1462,7 +1462,7 @@
   {
     "id": 54,
     "baslik": "Kerem RES TM",
-    "musteri": "Kırkağaç Enerji",
+    "musteri": "Kırkağaç Enerji (Gama Enerji)",
     "kategori": "RES",
     "santralTuru": "RES",
     "il": "",
@@ -1844,7 +1844,7 @@
   {
     "id": 68,
     "baslik": "Kütahya RES TM",
-    "musteri": "İçdaş",
+    "musteri": "İçtaş",
     "kategori": "RES",
     "santralTuru": "RES",
     "il": "Kütahya",
