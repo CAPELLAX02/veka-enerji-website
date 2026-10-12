@@ -62,11 +62,14 @@ const projects = source.map((p) => {
   if (!status) throw new Error(`#${p.id}: bilinmeyen durum "${p.durum}"`);
 
   const cap = capacity(p);
+  const tmCount = substations(p);
   return {
     id: p.id,
     name: p.baslik,
     client: p.musteri,
     type,
+    // Plant projects that include substation work are listed under TM as well
+    types: tmCount && type !== 'TM' ? [type, 'TM'] : [type],
     plant,
     status,
     location: location(p),
@@ -79,7 +82,7 @@ const projects = source.map((p) => {
     countMw: cap.mw != null && !p.ayniSantral,
     detail: detail(p, cap.mw != null),
     scope: p.kapsam,
-    substations: substations(p),
+    substations: tmCount,
   };
 });
 

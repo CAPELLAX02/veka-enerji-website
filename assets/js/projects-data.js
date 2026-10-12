@@ -8,6 +8,9 @@ window.VEKA_PROJECTS = [
   "name": "154 kV & 420 kV Trafo Merkezleri (14 adet)",
   "client": "Mensis Enerji",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Türkiye",
@@ -27,8 +30,11 @@ window.VEKA_PROJECTS = [
   "name": "Mihalıççık GES 400 kV TM",
   "client": "Mensis Enerji",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Mihalıççık, Eskişehir",
   "country": "Türkiye",
   "provinces": [
@@ -53,8 +59,12 @@ window.VEKA_PROJECTS = [
   "name": "Erdemir Malatya GES 400 kV TM",
   "client": "Mensis Enerji",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Hekimhan, Malatya",
   "country": "Türkiye",
   "provinces": [
@@ -79,8 +89,12 @@ window.VEKA_PROJECTS = [
   "name": "Kılıçlar GES 400 kV TM",
   "client": "Mensis Enerji",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Sivrihisar, Eskişehir",
   "country": "Türkiye",
   "provinces": [
@@ -105,6 +119,9 @@ window.VEKA_PROJECTS = [
   "name": "Çorum RES (YEKA RES-3, Osmancık)",
   "client": "Rönesans Holding",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Osmancık, Çorum",
@@ -131,6 +148,9 @@ window.VEKA_PROJECTS = [
   "name": "Sivas RES (YEKA RES-3, Kayalar)",
   "client": "Rönesans Holding",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Sivas",
@@ -157,6 +177,9 @@ window.VEKA_PROJECTS = [
   "name": "Kırşehir Lisanssız GES (Koyuneli)",
   "client": "Rönesans Holding",
   "type": "GES",
+  "types": [
+   "GES"
+  ],
   "plant": "GES",
   "status": "tamamlandi",
   "location": "Kırşehir",
@@ -183,6 +206,9 @@ window.VEKA_PROJECTS = [
   "name": "Şanlıurfa HES Kapasite Artışı",
   "client": "Rönesans Holding",
   "type": "HES",
+  "types": [
+   "HES"
+  ],
   "plant": "HES",
   "status": "tamamlandi",
   "location": "Haliliye, Şanlıurfa",
@@ -209,6 +235,9 @@ window.VEKA_PROJECTS = [
   "name": "5 Adet Lisanssız RES (İzmir)",
   "client": "Rönesans Holding",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "İzmir",
@@ -235,6 +264,9 @@ window.VEKA_PROJECTS = [
   "name": "Döşemealtı TM (İTM)",
   "client": "Girişim Elektrik",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Döşemealtı, Antalya",
@@ -261,6 +293,9 @@ window.VEKA_PROJECTS = [
   "name": "Narlı TM (İTM)",
   "client": "Girişim Elektrik",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Pazarcık, Kahramanmaraş",
@@ -287,6 +322,9 @@ window.VEKA_PROJECTS = [
   "name": "Korkuteli TM (İTM)",
   "client": "Girişim Elektrik",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Korkuteli, Antalya",
@@ -313,6 +351,9 @@ window.VEKA_PROJECTS = [
   "name": "Şapdağı RES",
   "client": "Barkan Enerji",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Havran, Balıkesir",
@@ -339,6 +380,9 @@ window.VEKA_PROJECTS = [
   "name": "Kayseri Yahyalı RES",
   "client": "Bak Enerji",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Yahyalı, Kayseri",
@@ -365,6 +409,9 @@ window.VEKA_PROJECTS = [
   "name": "Konyaray, Kılıçlar, Gaziray 154/27,5 kV TM'ler",
   "client": "TCDD",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Konya / Gaziantep",
@@ -396,6 +443,9 @@ window.VEKA_PROJECTS = [
   "name": "Taşpınar RES",
   "client": "Galata Wind",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Mustafakemalpaşa, Bursa",
@@ -422,6 +472,9 @@ window.VEKA_PROJECTS = [
   "name": "Mersinli RES",
   "client": "Yander Elektrik",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Bayındır, İzmir",
@@ -448,6 +501,10 @@ window.VEKA_PROJECTS = [
   "name": "Elmacık RES",
   "client": "Metgün Enerji",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Kırklareli",
@@ -474,6 +531,10 @@ window.VEKA_PROJECTS = [
   "name": "Atakale RES TM",
   "client": "Ataseven Enerji",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Keskin, Kırıkkale",
@@ -500,6 +561,10 @@ window.VEKA_PROJECTS = [
   "name": "Soğanlı RES TM",
   "client": "Ataseven Enerji",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Aydıntepe, Bayburt",
@@ -526,6 +591,10 @@ window.VEKA_PROJECTS = [
   "name": "TT Ağrı GES TM",
   "client": "Türk Telekom",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Ağrı",
@@ -552,6 +621,10 @@ window.VEKA_PROJECTS = [
   "name": "TT Sivas GES TM",
   "client": "Türk Telekom",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "tamamlandi",
   "location": "Zara, Sivas",
@@ -578,8 +651,12 @@ window.VEKA_PROJECTS = [
   "name": "TT Malatya GES 400 kV TM",
   "client": "Türk Telekom",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Malatya",
   "country": "Türkiye",
   "provinces": [
@@ -604,6 +681,10 @@ window.VEKA_PROJECTS = [
   "name": "Eti Bakır Ağrı GES TM",
   "client": "Cengiz Enerji",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "tamamlandi",
   "location": "Doğubayazıt, Ağrı",
@@ -630,6 +711,10 @@ window.VEKA_PROJECTS = [
   "name": "Eti Bakır Sivas GES TM",
   "client": "Cengiz Enerji",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "tamamlandi",
   "location": "Sivas",
@@ -656,6 +741,10 @@ window.VEKA_PROJECTS = [
   "name": "Arturna RES (YEKA RES-2)",
   "client": "Enerjisa Üretim",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Muğla",
@@ -682,6 +771,10 @@ window.VEKA_PROJECTS = [
   "name": "Falp RES (YEKA RES-2)",
   "client": "Enerjisa Üretim",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Muğla",
@@ -708,6 +801,10 @@ window.VEKA_PROJECTS = [
   "name": "Gaia RES (YEKA RES-2)",
   "client": "Enerjisa Üretim",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Ula, Muğla",
@@ -734,8 +831,12 @@ window.VEKA_PROJECTS = [
   "name": "Balkaya RES 400 kV TM",
   "client": "Enerjisa Üretim",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Kırklareli",
   "country": "Türkiye",
   "provinces": [
@@ -760,6 +861,10 @@ window.VEKA_PROJECTS = [
   "name": "Karaburun RES TM",
   "client": "Enerjisa Üretim",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Karaburun, İzmir",
@@ -786,8 +891,11 @@ window.VEKA_PROJECTS = [
   "name": "400 kV Tarsus OSB TM",
   "client": "EMTA",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Tarsus, Mersin",
   "country": "Türkiye",
   "provinces": [
@@ -812,6 +920,9 @@ window.VEKA_PROJECTS = [
   "name": "Yeraltı Tip GIS TM",
   "client": "TEİAŞ",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Türkiye",
@@ -831,6 +942,9 @@ window.VEKA_PROJECTS = [
   "name": "Payas 380 kV GIS TM",
   "client": "Mensis Enerji",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Payas, Hatay",
@@ -857,6 +971,9 @@ window.VEKA_PROJECTS = [
   "name": "Soran 132 kV GIS TM",
   "client": "Best Elektrik",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Soran, Erbil, Irak",
@@ -881,6 +998,9 @@ window.VEKA_PROJECTS = [
   "name": "New Azadi 132 kV GIS TM",
   "client": "Best Elektrik",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Irak",
@@ -900,6 +1020,9 @@ window.VEKA_PROJECTS = [
   "name": "Al-Qayara 132/33 kV GIS TM",
   "client": "Best Elektrik",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Qayyarah, Ninova, Irak",
@@ -924,6 +1047,9 @@ window.VEKA_PROJECTS = [
   "name": "380 kV GIS TM",
   "client": "Kroman Çelik",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Kocaeli",
@@ -950,8 +1076,12 @@ window.VEKA_PROJECTS = [
   "name": "Eskişehir 1 GES 400 kV TM",
   "client": "Efor Holding",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Eskişehir",
   "country": "Türkiye",
   "provinces": [
@@ -976,8 +1106,12 @@ window.VEKA_PROJECTS = [
   "name": "Eskişehir 2 GES 400 kV TM",
   "client": "Efor Holding",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Eskişehir",
   "country": "Türkiye",
   "provinces": [
@@ -1002,8 +1136,11 @@ window.VEKA_PROJECTS = [
   "name": "Balıkesir 400 kV TM",
   "client": "Efor Holding",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Balıkesir",
   "country": "Türkiye",
   "provinces": [
@@ -1028,8 +1165,11 @@ window.VEKA_PROJECTS = [
   "name": "400 kV Karaman GIS TM",
   "client": "Yıldızlar Holding",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Karaman",
   "country": "Türkiye",
   "provinces": [
@@ -1054,8 +1194,12 @@ window.VEKA_PROJECTS = [
   "name": "Karaman DRES 400 kV GIS TM",
   "client": "Yıldızlar Holding",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Karaman",
   "country": "Türkiye",
   "provinces": [
@@ -1080,6 +1224,9 @@ window.VEKA_PROJECTS = [
   "name": "400 kV Selvili TM",
   "client": "TEİAŞ",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Türkiye",
@@ -1099,6 +1246,9 @@ window.VEKA_PROJECTS = [
   "name": "400 kV Seydişehir TM",
   "client": "TEİAŞ",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Seydişehir, Konya",
@@ -1125,8 +1275,12 @@ window.VEKA_PROJECTS = [
   "name": "Sultanlar GES 400 kV TM",
   "client": "Kalyon",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Karapınar, Konya",
   "country": "Türkiye",
   "provinces": [
@@ -1151,6 +1305,10 @@ window.VEKA_PROJECTS = [
   "name": "Ünsal DGES TM",
   "client": "GD Enerji",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Gazipaşa, Antalya",
@@ -1177,6 +1335,10 @@ window.VEKA_PROJECTS = [
   "name": "AG Mars 4 TM",
   "client": "Egesa",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Türkiye",
@@ -1196,6 +1358,10 @@ window.VEKA_PROJECTS = [
   "name": "Yeni DGES TM",
   "client": "Egesa",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Türkiye",
@@ -1215,6 +1381,10 @@ window.VEKA_PROJECTS = [
   "name": "Iğdır DGES TM",
   "client": "Egesa",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Iğdır",
@@ -1241,8 +1411,12 @@ window.VEKA_PROJECTS = [
   "name": "400 kV Kılıçlar GIS TM",
   "client": "Kılıçlar Hurdacılık",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Sivrihisar, Eskişehir",
   "country": "Türkiye",
   "provinces": [
@@ -1267,6 +1441,9 @@ window.VEKA_PROJECTS = [
   "name": "ASO 2-3 OSB GIS TM",
   "client": "ASO OSB",
   "type": "TM",
+  "types": [
+   "TM"
+  ],
   "plant": "TM",
   "status": "tamamlandi",
   "location": "Ankara",
@@ -1293,6 +1470,10 @@ window.VEKA_PROJECTS = [
   "name": "Çallıca GES TM (Burdur)",
   "client": "Gülsan Holding",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Burdur",
@@ -1319,6 +1500,10 @@ window.VEKA_PROJECTS = [
   "name": "Gülsan Korkuteli GES TM",
   "client": "Gülsan Holding",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "tamamlandi",
   "location": "Korkuteli, Antalya",
@@ -1345,6 +1530,10 @@ window.VEKA_PROJECTS = [
   "name": "Kerem RES TM",
   "client": "Kırkağaç Enerji",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Türkiye",
@@ -1364,6 +1553,10 @@ window.VEKA_PROJECTS = [
   "name": "İstanbul RES TM",
   "client": "Caba Holding",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "İstanbul",
@@ -1390,6 +1583,10 @@ window.VEKA_PROJECTS = [
   "name": "Traçim GES TM",
   "client": "Caba Holding",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Cizre, Şırnak",
@@ -1416,6 +1613,10 @@ window.VEKA_PROJECTS = [
   "name": "Horasan GES TM",
   "client": "Kroman Çelik",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Horasan, Erzurum",
@@ -1442,6 +1643,10 @@ window.VEKA_PROJECTS = [
   "name": "Arakonak GES TM",
   "client": "Fernas",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Bulanık, Muş",
@@ -1468,6 +1673,10 @@ window.VEKA_PROJECTS = [
   "name": "Mersin DRES TM",
   "client": "Aksa Enerji",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Mersin",
@@ -1494,6 +1703,10 @@ window.VEKA_PROJECTS = [
   "name": "Büyükkışla DRES TM",
   "client": "Entek",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Şereflikoçhisar, Ankara",
@@ -1520,6 +1733,10 @@ window.VEKA_PROJECTS = [
   "name": "Eren DRES TM",
   "client": "Entek",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Gürün, Sivas",
@@ -1546,6 +1763,10 @@ window.VEKA_PROJECTS = [
   "name": "Elmalı 1-2 GES TM",
   "client": "Tüpraş",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Malkara, Tekirdağ",
@@ -1572,6 +1793,10 @@ window.VEKA_PROJECTS = [
   "name": "Yapı Kredi GES TM",
   "client": "Yapı Kredi",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "tamamlandi",
   "location": "Türkiye",
@@ -1591,6 +1816,10 @@ window.VEKA_PROJECTS = [
   "name": "Ekinciler GES TM",
   "client": "Ekinciler Demir Çelik",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Siverek, Şanlıurfa",
@@ -1617,6 +1846,10 @@ window.VEKA_PROJECTS = [
   "name": "Hisar DRES TM",
   "client": "Selenka Enerji",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Saray, Tekirdağ",
@@ -1643,6 +1876,10 @@ window.VEKA_PROJECTS = [
   "name": "Sivas GES TM",
   "client": "Selenka Enerji",
   "type": "GES",
+  "types": [
+   "GES",
+   "TM"
+  ],
   "plant": "GES",
   "status": "devam",
   "location": "Sivas",
@@ -1669,6 +1906,10 @@ window.VEKA_PROJECTS = [
   "name": "Dökükdağı RES TM",
   "client": "Betaş",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "tamamlandi",
   "location": "Antalya / Isparta / Konya",
@@ -1697,6 +1938,10 @@ window.VEKA_PROJECTS = [
   "name": "Kütahya RES TM",
   "client": "İçdaş",
   "type": "RES",
+  "types": [
+   "RES",
+   "TM"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Kütahya",
@@ -1723,8 +1968,11 @@ window.VEKA_PROJECTS = [
   "name": "Karaman GES 400 kV",
   "client": "SPI Energy Solutions",
   "type": "GES",
+  "types": [
+   "GES"
+  ],
   "plant": "GES",
-  "status": "devam",
+  "status": "tamamlandi",
   "location": "Karaman",
   "country": "Türkiye",
   "provinces": [
@@ -1749,6 +1997,9 @@ window.VEKA_PROJECTS = [
   "name": "Gogni RES",
   "client": "AG Energy",
   "type": "RES",
+  "types": [
+   "RES"
+  ],
   "plant": "RES",
   "status": "devam",
   "location": "Terjola – Tkibuli, İmereti, Gürcistan",

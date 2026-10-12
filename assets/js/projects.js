@@ -46,7 +46,7 @@
   };
   ORDER.forEach((t) => {
     stats[`mw-${t}`] = sumMw(counted.filter((p) => p.plant === t));
-    stats[`count-${t}`] = projects.filter((p) => p.type === t).length;
+    stats[`count-${t}`] = projects.filter((p) => p.types.includes(t)).length;
   });
   document.querySelectorAll('[data-project-stat]').forEach((el) => {
     el.dataset.count = String(Math.round(stats[el.dataset.projectStat] ?? 0));
@@ -91,7 +91,7 @@
   const listeners = [];
   const haystack = new Map(projects.map((p) => [p, lower(`${p.name} ${p.client} ${p.location} ${p.scope} ${p.voltage || ''}`)]));
   const matches = (p) =>
-    (state.type === 'all' || p.type === state.type) &&
+    (state.type === 'all' || p.types.includes(state.type)) &&
     (state.status === 'all' || p.status === state.status) &&
     (!state.query || state.query.split(/\s+/).every((w) => haystack.get(p).includes(w)));
   const emit = () => listeners.forEach((fn) => fn(projects.filter(matches)));
@@ -133,6 +133,7 @@
     const t = TYPES[p.type];
     const s = STATUS[p.status];
     const plant = p.plant !== p.type ? TYPES[p.plant] : null;
+    const extra = p.types.filter((x) => x !== p.type).map((x) => TYPES[x]);
     const specs = [
       p.voltage && ['Gerilim', p.voltage],
       p.capacity && [p.type === 'TM' || plant ? 'Santral gücü' : 'Kurulu güç', p.capacity],
@@ -145,6 +146,10 @@
           <span class="inline-flex items-center gap-1.5 rounded-full bg-navy-50 py-1 pr-3 pl-1 text-xs font-semibold text-navy-800">
             <span class="grid size-5 place-items-center rounded-full text-white" style="background:${t.color}">${icon(t.icon, 'icon size-3')}</span>${t.label}
           </span>
+          ${extra.map((x) => `
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-navy-50 py-1 pr-3 pl-1 text-xs font-semibold text-navy-800">
+            <span class="grid size-5 place-items-center rounded-full text-white" style="background:${x.color}">${icon(x.icon, 'icon size-3')}</span>${x.label}
+          </span>`).join('')}
           ${plant ? `<span class="rounded-full px-2.5 py-1 text-[11px] font-medium text-navy-500 ring-1 ring-navy-100">${plant.label} santrali</span>` : ''}
         </span>
         <span class="rounded-full px-2.5 py-1 text-[11px] font-semibold ring-1 ${s.cls}">${s.label}</span>
