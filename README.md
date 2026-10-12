@@ -6,13 +6,13 @@ VEKA Enerji'nin kurumsal web sitesi. Düz HTML + Tailwind CSS ile yazılmış, d
 
 | Dosya | İçerik |
 | --- | --- |
-| `index.html` | Ana sayfa — hero slider, rakamlar, hizmetler, çalışma modeli, proje haritası, öne çıkan projeler, referanslar |
+| `index.html` | Ana sayfa — hero slider, rakamlar, hizmetler, çalışma modeli, proje haritası, en büyük ölçekli projeler, referans logoları |
 | `hakkimizda.html` | Hakkımızda, misyon, vizyon, değerler, kamu kurumları |
-| `hizmetler.html` | GES, RES, HES, trafo merkezleri, nakil hatları, taahhüt, inşaat, lisanssız üretim |
-| `projeler.html` | Tamamlanan / devam eden projeler, tür filtreleri, Türkiye & dünya haritası, kurulu güç dağılımı |
-| `referanslar.html` | Firma ve kurum logoları |
-| `ekibimiz.html` | Yönetim ekibi ve uzmanlık alanları |
-| `kariyer.html` | Açık pozisyonlar ve başvuru formu |
+| `hizmetler.html` | TM, RES, GES, HES, EİH (enerji iletim hatları), taahhüt, inşaat, lisanssız üretim |
+| `projeler.html` | Tamamlanan / devam eden projeler, tür filtreleri, arama, Türkiye & dünya haritası, kurulu güç dağılımı |
+| `referanslar.html` | Firmalar (sektördeki büyüklüğe göre), kamu kurumları, çözüm ortakları |
+| `ekibimiz.html` | Ekip yaklaşımı, rakamlar ve uzmanlık alanları |
+| `kariyer.html` | Açık pozisyon (TM saha denetmeni), Kariyer.net yönlendirmesi ve başvuru formu |
 | `iletisim.html` | İletişim bilgileri, teklif formu, harita |
 | `404.html` | Bulunamadı sayfası |
 
@@ -20,7 +20,7 @@ VEKA Enerji'nin kurumsal web sitesi. Düz HTML + Tailwind CSS ile yazılmış, d
 
 ```bash
 npm install
-npm run build        # partial'ları sayfalara işler + CSS'i derler
+npm run build        # proje verisini üretir, partial'ları sayfalara işler, CSS'i derler
 npm run serve        # http://localhost:3000
 ```
 
@@ -36,23 +36,37 @@ npm run serve        # http://localhost:3000
 
 ## İçerik güncelleme
 
-### Projeler
+### Projeler — `data/projeler.json`
 
-Tüm proje verisi tek dosyada: **`assets/js/projects-data.js`**. Harita işaretleri, filtreler, proje kartları ve toplam MW / proje / il sayıları bu listeden otomatik hesaplanır. Alanların açıklaması dosyanın başındadır. Kart görselleri `assets/img/photos/` altına eklenebilir.
+Tüm proje verisi tek dosyada, referans listesi tablosuyla aynı sütunlarla (`baslik`, `musteri`, `kategori`, `santralTuru`, `il`, `ilce`, `gerilimKv`, `mwm`, `mwe`, `kapsam`, `durum`, `eslesme` …). Siteye özel iki ek alan vardır:
 
-Projeler sayfası adres çubuğundan filtrelenebilir: `projeler.html?tur=GES`, `projeler.html?durum=devam`.
+- `ulke` — `Türkiye`, `Irak`, `Gürcistan` …
+- `konum` — haritadaki nokta(lar): `[[enlem, boylam], …]`. Boş bırakılan proje listede görünür, haritada görünmez.
+
+`npm run build` bu dosyadan `assets/js/projects-data.js`'i üretir; harita, filtreler, kartlar ve tüm rakamlar (toplam MW, proje / TM / il / ülke sayısı) buradan otomatik hesaplanır.
+
+**Kurulu güç kuralı:** MW değeri yalnızca `eslesme` alanı `Enerji Atlası`, `Diğer kaynak` veya `Firma bilgisi` olan projelerde gösterilir ve toplama katılır. `Olası eşleşme` satırlarının değerleri teyit edildikten sonra `eslesme` alanını güncelleyin (ya da `scripts/build-projects.mjs` içindeki `CONFIRMED_SOURCES` listesine ekleyin). Aynı santrale ait ikinci kalem `ayniSantral` ile işaretlenir ve toplamda bir kez sayılır; `gucGosterme: true` bir projenin gücünü gizler.
+
+Projeler sayfası adres çubuğundan filtrelenebilir: `projeler.html?tur=TM`, `projeler.html?durum=devam`.
+
+### Referanslar — `data/referanslar.json`
+
+`firmalar` listesi **sektördeki büyüklüğe göre** sıralıdır; sırayı değiştirmek için satırların yerini değiştirmeniz yeterli. Logo dosyaları `assets/img/references/` altındadır; `logo` alanı boş olan firma, adıyla (yazı olarak) gösterilir. Ana sayfadaki kayan logo bandı aynı listenin ilk `bantAdedi` logolu firmasından oluşur. `kurumlar` ve `cozumOrtaklari` da aynı dosyadadır.
 
 ### Formlar
 
 İletişim ve kariyer formları varsayılan olarak ziyaretçinin e-posta uygulamasını açar (`info@vekaenerji.com`). Bir form servisi (Formspree, Netlify Forms, kendi API'niz…) kullanmak için `<form>` etiketine `action="https://…"` eklemeniz yeterli; `assets/js/forms.js` formu o adrese gönderir.
 
-## Yayına almadan önce
+## Teyit bekleyenler
 
-- [ ] `assets/js/projects-data.js` içindeki **örnek projeleri** gerçek proje listesiyle değiştirin.
-- [ ] `ekibimiz.html` içindeki **yer tutucu ekip kartlarını** (Ad Soyad) gerçek bilgiler ve fotoğraflarla güncelleyin.
-- [ ] `kariyer.html` içindeki **örnek ilanları** güncelleyin.
-- [ ] Referanslardaki **SPI** için logo dosyası ekleyin (`assets/img/references/`).
-- [ ] KVKK aydınlatma metni hazırlanınca formlardaki onay kutularına bağlantı ekleyin.
+- [ ] `Olası eşleşme` işaretli 10 projenin kapasite (MW) bilgileri — teyit edilene kadar gösterilmiyor ve toplama katılmıyor.
+- [ ] Projelerdeki `yil` ve `durum` alanları referans tablosunda "tahmini" olarak işaretli; durum bilgisinin firma kayıtlarıyla karşılaştırılması.
+- [ ] Gülsan Korkuteli GES — tabloda ÇED sürecinin sonlandırıldığı notu var; kapasite gizlendi (`gucGosterme`).
+- [ ] Gogni RES (Gürcistan) — VEKA'nın hizmet kapsamı ("Mühendislik ve proje hizmetleri" olarak yazıldı).
+- [ ] New Azadi 132 kV GIS TM (Irak) — konum bilinmediği için haritada gösterilmiyor.
+- [ ] Logosu bulunamayan firmalar (yazı olarak gösteriliyor): Yıldızlar Holding, Mensis Enerji, Barkan Enerji, Yander Elektrik, Best Elektrik, Betaş, Kırkağaç Enerji, TCDD.
+- [ ] Kariyer.net'teki ilanın doğrudan bağlantısı (şu an Kariyer.net'te "veka enerji" aramasına gidiyor).
+- [ ] KVKK aydınlatma metni hazırlanınca formlardaki onay kutularına bağlantı eklenmesi.
 
 ## Görseller
 
