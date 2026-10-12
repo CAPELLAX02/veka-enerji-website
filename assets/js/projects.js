@@ -1,50 +1,61 @@
-// Project stats, interactive map, filters and cards — all driven by window.VEKA_PROJECTS.
+// Project stats, interactive map, filters and cards — all driven by window.VEKA_PROJECTS
+// (generated from data/projeler.json by scripts/build-projects.mjs).
 (() => {
   const projects = window.VEKA_PROJECTS || [];
   if (!projects.length) return;
 
+  // Display order across the site: TM → RES → GES → HES → EİH
   const TYPES = {
-    GES: { label: 'GES', long: 'Güneş Enerji Santrali', short: 'Güneş', icon: 'sun', color: 'var(--color-ges)' },
-    RES: { label: 'RES', long: 'Rüzgar Enerji Santrali', short: 'Rüzgar', icon: 'wind', color: 'var(--color-res)' },
-    HES: { label: 'HES', long: 'Hidroelektrik Santral', short: 'Hidro', icon: 'droplets', color: 'var(--color-hes)' },
     TM: { label: 'TM', long: 'Trafo Merkezi', short: 'Trafo Merkezi', icon: 'zap', color: 'var(--color-tm)' },
-    ENH: { label: 'ENH', long: 'Enerji Nakil Hattı', short: 'Nakil Hattı', icon: 'utility-pole', color: 'var(--color-enh)' },
+    RES: { label: 'RES', long: 'Rüzgar Enerji Santrali', short: 'Rüzgar', icon: 'wind', color: 'var(--color-res)' },
+    GES: { label: 'GES', long: 'Güneş Enerji Santrali', short: 'Güneş', icon: 'sun', color: 'var(--color-ges)' },
+    HES: { label: 'HES', long: 'Hidroelektrik Santral', short: 'Hidro', icon: 'droplets', color: 'var(--color-hes)' },
+    EIH: { label: 'EİH', long: 'Enerji İletim Hattı', short: 'İletim Hattı', icon: 'utility-pole', color: 'var(--color-eih)' },
   };
+  const ORDER = Object.keys(TYPES);
   const STATUS = {
     tamamlandi: { label: 'Tamamlandı', cls: 'bg-emerald-50 text-emerald-700 ring-emerald-600/15' },
     devam: { label: 'Devam Ediyor', cls: 'bg-amber-50 text-amber-700 ring-amber-600/20' },
   };
   const HOME = 'Türkiye';
-  const countryOf = (p) => p.country || HOME;
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const icon = (name, cls = 'icon') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${name}"/></svg>`;
-  const fmt = (n, d = 0) => n.toLocaleString('tr-TR', { minimumFractionDigits: d, maximumFractionDigits: d });
-  const locationOf = (p) => (countryOf(p) === HOME ? p.il : p.country);
+  const lower = (s) => s.toLocaleLowerCase('tr-TR');
+  const maxKv = (p) => Math.max(0, ...(p.voltage || '').match(/[\d.]+/g)?.map(Number) || [0]);
+
+  // Default ordering: type order, ongoing first, then size (MW, then voltage)
+  const byDefault = (a, b) =>
+    ORDER.indexOf(a.type) - ORDER.indexOf(b.type) ||
+    (a.status === b.status ? 0 : a.status === 'devam' ? -1 : 1) ||
+    (b.mw || 0) - (a.mw || 0) ||
+    maxKv(b) - maxKv(a) ||
+    a.name.localeCompare(b.name, 'tr');
+  const bySize = (a, b) => (b.mw || 0) - (a.mw || 0) || maxKv(b) - maxKv(a);
 
   // --- Stats ------------------------------------------------------------------
-  const sumMw = (list) => list.reduce((s, p) => s + (p.mw || 0), 0);
+  const counted = projects.filter((p) => p.countMw);
+  const sumMw = (list) => list.reduce((s, p) => s + p.mw, 0);
   const stats = {
-    'mw-total': sumMw(projects),
+    'mw-total': sumMw(counted),
     count: projects.length,
     'count-done': projects.filter((p) => p.status === 'tamamlandi').length,
     'count-ongoing': projects.filter((p) => p.status === 'devam').length,
-    provinces: new Set(projects.filter((p) => countryOf(p) === HOME).map((p) => p.il)).size,
-    countries: new Set(projects.map(countryOf)).size,
+    substations: projects.reduce((s, p) => s + p.substations, 0),
+    provinces: new Set(projects.flatMap((p) => p.provinces)).size,
+    countries: new Set(projects.map((p) => p.country)).size,
   };
-  Object.keys(TYPES).forEach((t) => {
-    const list = projects.filter((p) => p.type === t);
-    stats[`mw-${t}`] = sumMw(list);
-    stats[`count-${t}`] = list.length;
+  ORDER.forEach((t) => {
+    stats[`mw-${t}`] = sumMw(counted.filter((p) => p.plant === t));
+    stats[`count-${t}`] = projects.filter((p) => p.type === t).length;
   });
   document.querySelectorAll('[data-project-stat]').forEach((el) => {
-    const value = stats[el.dataset.projectStat] ?? 0;
-    el.dataset.count = String(Math.round(value));
+    el.dataset.count = String(Math.round(stats[el.dataset.projectStat] ?? 0));
     el.textContent = '0';
   });
 
   // Stacked MW bar by generation type
   document.querySelectorAll('[data-project-breakdown]').forEach((el) => {
-    const gen = ['GES', 'RES', 'HES'].filter((t) => stats[`mw-${t}`] > 0);
+    const gen = ['RES', 'GES', 'HES'].filter((t) => stats[`mw-${t}`] > 0);
     const total = gen.reduce((s, t) => s + stats[`mw-${t}`], 0);
     const dark = el.dataset.theme === 'dark';
     el.innerHTML = `
@@ -71,18 +82,26 @@
   // --- Shared filter state ---------------------------------------------------------
   // Initial filter can come from the URL, e.g. projeler.html?tur=GES&durum=devam
   const params = new URLSearchParams(location.search);
+  const typeParam = params.get('tur')?.toLocaleUpperCase('tr-TR').replace('İ', 'I');
   const state = {
-    type: TYPES[params.get('tur')?.toUpperCase()] ? params.get('tur').toUpperCase() : 'all',
+    type: TYPES[typeParam] ? typeParam : 'all',
     status: STATUS[params.get('durum')] ? params.get('durum') : 'all',
+    query: '',
   };
   const listeners = [];
-  const matches = (p) => (state.type === 'all' || p.type === state.type) && (state.status === 'all' || p.status === state.status);
+  const haystack = new Map(projects.map((p) => [p, lower(`${p.name} ${p.client} ${p.location} ${p.scope} ${p.voltage || ''}`)]));
+  const matches = (p) =>
+    (state.type === 'all' || p.type === state.type) &&
+    (state.status === 'all' || p.status === state.status) &&
+    (!state.query || state.query.split(/\s+/).every((w) => haystack.get(p).includes(w)));
   const emit = () => listeners.forEach((fn) => fn(projects.filter(matches)));
 
   document.querySelectorAll('[data-project-filters]').forEach((bar) => {
-    bar.querySelectorAll('[data-filter-type] [data-count-type]').forEach((el) => {
-      const t = el.dataset.countType;
-      el.textContent = t === 'all' ? projects.length : stats[`count-${t}`];
+    bar.querySelectorAll('[data-filter-type] [data-value]').forEach((btn) => {
+      const t = btn.dataset.value;
+      if (t !== 'all' && !stats[`count-${t}`]) btn.hidden = true; // no projects of this type yet
+      const counter = btn.querySelector('[data-count-type]');
+      if (counter) counter.textContent = t === 'all' ? projects.length : stats[`count-${t}`];
     });
     bar.querySelectorAll('[data-filter-type], [data-filter-status]').forEach((group) => {
       const value = 'filterType' in group.dataset ? state.type : state.status;
@@ -92,10 +111,20 @@
       const btn = e.target.closest('[data-value]');
       if (!btn) return;
       const group = btn.closest('[data-filter-type], [data-filter-status]');
-      const key = 'filterType' in group.dataset ? 'type' : 'status';
-      state[key] = btn.dataset.value;
+      state['filterType' in group.dataset ? 'type' : 'status'] = btn.dataset.value;
       group.querySelectorAll('[data-value]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
       emit();
+    });
+  });
+
+  document.querySelectorAll('[data-project-search]').forEach((input) => {
+    let t;
+    input.addEventListener('input', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        state.query = lower(input.value.trim());
+        emit();
+      }, 120);
     });
   });
 
@@ -103,48 +132,63 @@
   const card = (p) => {
     const t = TYPES[p.type];
     const s = STATUS[p.status];
+    const plant = p.plant !== p.type ? TYPES[p.plant] : null;
+    const specs = [
+      p.voltage && ['Gerilim', p.voltage],
+      p.capacity && [p.type === 'TM' || plant ? 'Santral gücü' : 'Kurulu güç', p.capacity],
+    ].filter(Boolean);
     return `
-    <article class="group card-lift flex flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-navy-900/8" data-reveal>
-      <div class="relative aspect-[4/3] overflow-hidden bg-navy-100">
-        <img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" decoding="async" class="size-full object-cover transition duration-700 ease-out-expo group-hover:scale-105" />
-        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent"></div>
-        <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-navy-900 shadow-sm backdrop-blur">
-          <span class="size-2 rounded-full" style="background:${t.color}"></span>${t.label}
+    <article class="group card-lift relative flex flex-col overflow-hidden rounded-3xl bg-white p-6 ring-1 ring-navy-900/8 sm:p-7" data-reveal>
+      <span class="absolute inset-x-0 top-0 h-1 origin-left transition-transform duration-500 ease-out-expo scale-x-[0.18] group-hover:scale-x-100" style="background:${t.color}"></span>
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="flex flex-wrap items-center gap-1.5">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-navy-50 py-1 pr-3 pl-1 text-xs font-semibold text-navy-800">
+            <span class="grid size-5 place-items-center rounded-full text-white" style="background:${t.color}">${icon(t.icon, 'icon size-3')}</span>${t.label}
+          </span>
+          ${plant ? `<span class="rounded-full px-2.5 py-1 text-[11px] font-medium text-navy-500 ring-1 ring-navy-100">${plant.label} santrali</span>` : ''}
         </span>
-        <span class="absolute right-4 bottom-4 font-mono text-xs text-white/85">${p.year}</span>
+        <span class="rounded-full px-2.5 py-1 text-[11px] font-semibold ring-1 ${s.cls}">${s.label}</span>
       </div>
-      <div class="flex flex-1 flex-col p-6">
-        <div class="flex items-center justify-between gap-3">
-          <p class="flex items-center gap-1.5 text-sm text-navy-500">${icon('map-pin', 'icon size-4')}${esc(locationOf(p))}</p>
-          <span class="rounded-full px-2.5 py-1 text-[11px] font-semibold ring-1 ${s.cls}">${s.label}</span>
-        </div>
-        <h3 class="mt-3 text-xl font-semibold">${esc(p.name)}</h3>
-        <p class="mt-1 text-sm text-navy-500">${t.long}</p>
-        <div class="mt-5 flex items-end justify-between border-t border-navy-100 pt-5">
-          <div>
-            <p class="font-mono text-[11px] tracking-widest text-navy-400 uppercase">Kapasite</p>
-            <p class="mt-1 font-display text-2xl font-semibold text-navy-900">${esc(p.capacity)}</p>
-          </div>
-          ${p.voltage ? `<p class="rounded-lg bg-navy-50 px-2.5 py-1 font-mono text-xs text-navy-600">${esc(p.voltage)}</p>` : ''}
-        </div>
-        <ul class="mt-5 flex flex-wrap gap-1.5">
-          ${p.scope.map((x) => `<li class="rounded-md bg-navy-50 px-2 py-1 text-xs text-navy-600">${esc(x)}</li>`).join('')}
-        </ul>
+      <h3 class="mt-5 text-lg leading-snug font-semibold">${esc(p.name)}</h3>
+      <div class="mt-3 space-y-1.5 text-sm text-navy-500">
+        <p class="flex items-start gap-2">${icon('building-2', 'icon mt-0.5 size-4 text-navy-400')}<span><span class="sr-only">Müşteri: </span>${esc(p.client)}</span></p>
+        <p class="flex items-start gap-2">${icon('map-pin', 'icon mt-0.5 size-4 text-navy-400')}<span><span class="sr-only">Konum: </span>${esc(p.location)}</span></p>
       </div>
+      ${specs.length ? `
+      <dl class="mt-5 grid grid-cols-2 gap-4 border-t border-navy-100 pt-5">
+        ${specs.map(([k, v]) => `<div><dt class="font-mono text-[10px] tracking-widest text-navy-400 uppercase">${k}</dt><dd class="mt-1 font-display text-xl font-semibold text-navy-900">${esc(v)}</dd></div>`).join('')}
+      </dl>` : ''}
+      <p class="mt-5 border-t border-navy-100 pt-5 text-sm leading-relaxed text-navy-600">${esc(p.scope)}</p>
+      ${p.detail ? `<p class="mt-2 text-xs text-navy-400">${esc(p.detail)}</p>` : ''}
     </article>`;
   };
 
   document.querySelectorAll('[data-project-list]').forEach((el) => {
+    const pageSize = Number(el.dataset.pageSize) || Infinity;
     const limit = Number(el.dataset.limit) || Infinity;
+    const sort = el.dataset.sort === 'size' ? bySize : byDefault;
     const empty = document.querySelector(el.dataset.empty || null);
     const counter = document.querySelector(el.dataset.counter || null);
-    const render = (list) => {
-      const sorted = [...list].sort((a, b) => (a.status === b.status ? b.year - a.year : a.status === 'devam' ? -1 : 1));
-      el.innerHTML = sorted.slice(0, limit).map(card).join('');
-      if (empty) empty.hidden = list.length > 0;
-      if (counter) counter.textContent = list.length;
+    const more = document.querySelector(el.dataset.more || null);
+    let list = [];
+    let shown = 0;
+
+    const renderMore = () => {
+      const next = list.slice(shown, Math.min(shown + pageSize, limit));
+      el.insertAdjacentHTML('beforeend', next.map(card).join(''));
+      shown += next.length;
+      if (more) more.hidden = shown >= Math.min(list.length, limit);
       window.VEKA?.observeReveals(el);
     };
+    const render = (filtered) => {
+      list = [...filtered].sort(sort);
+      shown = 0;
+      el.innerHTML = '';
+      renderMore();
+      if (empty) empty.hidden = list.length > 0;
+      if (counter) counter.textContent = list.length;
+    };
+    more?.addEventListener('click', renderMore);
     listeners.push(render);
     render(projects.filter(matches));
   });
@@ -170,28 +214,49 @@
     };
   };
 
+  // Projects sharing a location (same il) are fanned out on a small ring so every marker stays clickable
+  const spread = (items, radius) => {
+    const groups = new Map();
+    items.forEach((it) => {
+      const key = `${Math.round(it.x / radius)}:${Math.round(it.y / radius)}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(it);
+    });
+    groups.forEach((g) => {
+      if (g.length < 2) return;
+      const cx = g.reduce((s, it) => s + it.x, 0) / g.length;
+      const cy = g.reduce((s, it) => s + it.y, 0) / g.length;
+      const r = radius * (0.7 + g.length * 0.12);
+      g.forEach((it, i) => {
+        const a = (i / g.length) * Math.PI * 2 - Math.PI / 2;
+        it.x = cx + Math.cos(a) * r;
+        it.y = cy + Math.sin(a) * r;
+      });
+    });
+    return items;
+  };
+
   const tooltipHtml = (p) => {
     const t = TYPES[p.type];
+    const spec = [p.voltage, p.capacity].filter(Boolean).join(' · ');
     return `
       <div class="flex items-center gap-2 text-[11px] font-semibold tracking-wide text-navy-500 uppercase">
         <span class="size-2 rounded-full" style="background:${t.color}"></span>${t.long}
       </div>
       <p class="mt-1.5 font-display text-base leading-snug font-semibold text-navy-900">${esc(p.name)}</p>
+      <p class="mt-1 text-sm text-navy-600">${esc(p.client)}</p>
       <div class="mt-2 flex items-center justify-between gap-4 text-sm">
-        <span class="text-navy-500">${esc(locationOf(p))} · ${p.year}</span>
-        <span class="font-mono font-medium text-navy-900">${esc(p.capacity)}</span>
+        <span class="text-navy-500">${esc(p.location)}</span>
+        ${spec ? `<span class="shrink-0 font-mono text-xs font-medium text-navy-900">${esc(spec)}</span>` : ''}
       </div>
       <p class="mt-2 text-xs font-medium ${p.status === 'devam' ? 'text-amber-600' : 'text-emerald-600'}">${STATUS[p.status].label}</p>`;
   };
 
-  document.querySelectorAll('[data-project-map]').forEach(async (root) => {
+  document.querySelectorAll('[data-project-map]').forEach((root) => {
     const stage = root.querySelector('[data-map-stage]');
     const tooltip = root.querySelector('[data-map-tooltip]');
     const viewButtons = root.querySelectorAll('[data-map-view]');
-    const views = {
-      tr: { url: 'assets/maps/turkiye.svg' },
-      world: { url: 'assets/maps/dunya.svg' },
-    };
+    const views = { tr: 'assets/maps/turkiye.svg', world: 'assets/maps/dunya.svg' };
     let view = root.dataset.view || 'tr';
     let current = projects.filter(matches);
 
@@ -211,53 +276,37 @@
       tooltip.style.transform = `translate(${left}px, ${top}px)`;
     };
 
+    const markerHtml = (p, x, y, P) => `
+      <button type="button" class="map-marker group/m absolute -translate-x-1/2 -translate-y-1/2 p-1 focus:outline-none sm:p-1.5" style="left:${(x / P.width) * 100}%;top:${(y / P.height) * 100}%" data-id="${p.id}" aria-label="${esc(p.name)} — ${esc(p.client)}">
+        ${p.status === 'devam' ? `<span class="absolute inset-1 rounded-full animate-ping-slow sm:inset-1.5" style="background:${TYPES[p.type].color}"></span>` : ''}
+        <span class="relative block size-2.5 rounded-full ring-2 ring-white shadow-md transition-transform duration-300 group-hover/m:scale-150 group-focus-visible/m:scale-150 sm:size-3.5 sm:ring-[2.5px]" style="background:${TYPES[p.type].color}"></span>
+      </button>`;
+
     const draw = async () => {
-      const markup = await loadSvg(views[view].url);
-      stage.innerHTML = markup;
+      stage.innerHTML = await loadSvg(views[view]);
       const svg = stage.querySelector('svg');
       svg.classList.add('block', 'h-auto', 'w-full');
-      svg.removeAttribute('width');
-      svg.removeAttribute('height');
       const P = projector(svg);
-      const pct = (x, y) => `left:${(x / P.width) * 100}%;top:${(y / P.height) * 100}%`;
-      const NS = 'http://www.w3.org/2000/svg';
-
       const layer = document.createElement('div');
       layer.className = 'absolute inset-0';
       stage.appendChild(layer);
 
-      const markerHtml = (p, x, y) => `
-        <button type="button" class="map-marker group/m absolute -translate-x-1/2 -translate-y-1/2 p-1 focus:outline-none sm:p-1.5" style="${pct(x, y)}" data-id="${p.id}" aria-label="${esc(p.name)} — ${esc(p.capacity)}">
-          ${p.status === 'devam' ? `<span class="absolute inset-1 rounded-full animate-ping-slow sm:inset-1.5" style="background:${TYPES[p.type].color}"></span>` : ''}
-          <span class="relative block size-2.5 rounded-full ring-2 ring-white shadow-md sm:size-3.5 sm:ring-[2.5px] transition-transform duration-300 group-hover/m:scale-150 group-focus-visible/m:scale-150" style="background:${TYPES[p.type].color}"></span>
-        </button>`;
-
+      const located = current.filter((p) => p.points);
       if (view === 'tr') {
-        const local = current.filter((p) => countryOf(p) === HOME);
-        const provinces = new Set(local.map((p) => p.il));
+        const local = located.filter((p) => p.country === HOME);
+        const provinces = new Set(current.flatMap((p) => p.provinces));
         svg.querySelectorAll('[data-il]').forEach((path) => path.classList.toggle('is-active', provinces.has(path.dataset.il)));
-
-        local.filter((p) => p.route).forEach((p) => {
-          const line = document.createElementNS(NS, 'polyline');
-          line.setAttribute('points', p.route.map(([la, lo]) => P.xy(la, lo).join(',')).join(' '));
-          line.setAttribute('fill', 'none');
-          line.style.stroke = TYPES.ENH.color;
-          line.setAttribute('stroke-width', '3.5');
-          line.setAttribute('stroke-linecap', 'round');
-          line.setAttribute('stroke-dasharray', '2 7');
-          line.classList.add('map-route');
-          svg.appendChild(line);
-        });
-
-        layer.innerHTML = local.map((p) => markerHtml(p, ...P.xy(p.lat, p.lon))).join('');
+        const items = local.flatMap((p) => p.points.map(([la, lo]) => { const [x, y] = P.xy(la, lo); return { p, x, y }; }));
+        layer.innerHTML = spread(items, 9).map(({ p, x, y }) => markerHtml(p, x, y, P)).join('');
       } else {
-        const abroad = current.filter((p) => countryOf(p) !== HOME);
-        const home = current.filter((p) => countryOf(p) === HOME);
+        const abroad = located.filter((p) => p.country !== HOME);
+        const home = current.filter((p) => p.country === HOME);
+        const items = abroad.flatMap((p) => p.points.map(([la, lo]) => { const [x, y] = P.xy(la, lo); return { p, x, y }; }));
         const [hx, hy] = P.xy(39, 35);
         layer.innerHTML =
-          abroad.map((p) => markerHtml(p, ...P.xy(p.lat, p.lon))).join('') +
+          spread(items, 6).map(({ p, x, y }) => markerHtml(p, x, y, P)).join('') +
           (home.length
-            ? `<button type="button" class="absolute -translate-x-1/2 -translate-y-1/2" style="${pct(hx, hy)}" data-home aria-label="Türkiye — ${home.length} proje, haritayı yakınlaştır">
+            ? `<button type="button" class="absolute -translate-x-1/2 -translate-y-1/2" style="left:${(hx / P.width) * 100}%;top:${(hy / P.height) * 100}%" data-home aria-label="Türkiye — ${home.length} proje, haritayı yakınlaştır">
                  <span class="absolute inset-2 rounded-full bg-brand-400 animate-ping-slow"></span>
                  <span class="relative grid size-11 place-items-center rounded-full bg-brand-500 font-display text-sm font-bold text-white shadow-lg ring-4 ring-white/80">${home.length}</span>
                </button>`
@@ -266,8 +315,7 @@
 
       const byId = Object.fromEntries(projects.map((p) => [p.id, p]));
       layer.querySelectorAll('.map-marker').forEach((m) => {
-        const p = byId[m.dataset.id];
-        const open = () => showTooltip(m, tooltipHtml(p));
+        const open = () => showTooltip(m, tooltipHtml(byId[m.dataset.id]));
         m.addEventListener('mouseenter', open);
         m.addEventListener('focus', open);
         m.addEventListener('click', open);
@@ -285,13 +333,11 @@
     };
     viewButtons.forEach((b) => b.addEventListener('click', () => setView(b.dataset.mapView)));
     stage.addEventListener('mouseleave', hideTooltip);
-
     listeners.push((list) => {
       current = list;
       hideTooltip();
       draw();
     });
-
     setView(view);
   });
 })();

@@ -1,0 +1,1928 @@
+[
+  {
+    "id": 1,
+    "baslik": "154 kV & 420 kV Trafo Merkezleri (14 adet)",
+    "musteri": "Mensis Enerji",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154 / 420",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "14 adet TM",
+    "kapsam": "TM primer, inşaat ve sekonder projeleri; keşif, metraj, şartname; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": "Toplu kalem; proje adları listede yok.",
+    "ulke": "Türkiye",
+    "konum": null
+  },
+  {
+    "id": 2,
+    "baslik": "Mihalıççık GES 400 kV TM",
+    "musteri": "Mensis Enerji",
+    "kategori": "TM",
+    "santralTuru": "GES",
+    "il": "Eskişehir",
+    "ilce": "Mihalıççık",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.eskisehir.net/eskisehirin-enerji-altyapisi-icin-yeni-gelisme-kirsaldaki-3-koyu-kapsayacak",
+    "not": "TEİAŞ'ın 400 kV Mihalıççık GES – Yunus Emre TES hattı Haziran 2025'te duyuruldu; GES kurulu gücü bulunamadı. (Enerjisa'nın 35 MWm/25 MWe Mihalıççık depolamalı GES'i 2026 tarihli ve 400 kV değil — farklı proje olabilir.)",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.867,
+        31.496
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "baslik": "Erdemir Malatya GES 400 kV TM",
+    "musteri": "Mensis Enerji",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Malatya",
+    "ilce": "Hekimhan",
+    "bolge": "Türkiye",
+    "yil": 2023,
+    "gerilimKv": "400",
+    "mwm": 311.9985,
+    "mwe": 235.4,
+    "ekBilgi": "361,46 ha",
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://malatya.csb.gov.tr/malatya-ili-hekimhan-ilcesi-delihasanyurdu-mahallesi-107-ada-72parselde-eregli-demir-ve-celik-fabrikalari-t.a.s.-tarafindan-yapilmasi-planlanan-erdemir-malatya-ges-311-9985-mwm-235-4-mwe--361-46-ha-projesi-hk.-duyuru-453177",
+    "not": "ÇED süreci 2023'te başladı (ÇŞB Malatya duyurusu).",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.817,
+        37.931
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "baslik": "Kılıçlar GES 400 kV TM",
+    "musteri": "Mensis Enerji",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Eskişehir",
+    "ilce": "Sivrihisar",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": 87,
+    "ekBilgi": "203.661 panel",
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/kiliclar-hurdacilik-eskisehirde-gunes-santrali-kuracak-62785h.htm",
+    "not": "Yatırımcı Kılıçlar Hurdacılık; lisanssız, öz tüketim. Haber tarihi 26.03.2025. Listede Kılıçlar Hurdacılık'ın 400 kV GIS TM kalemiyle aynı santral.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.451,
+        31.537
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "baslik": "Çorum RES (YEKA RES-3, Osmancık)",
+    "musteri": "Rönesans Holding",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Çorum",
+    "ilce": "Osmancık",
+    "bolge": "Türkiye",
+    "yil": 2023,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 56,
+    "ekBilgi": "8 × Nordex N163",
+    "kapsam": "YEKA kapsamında ön proje ve kati projeler; ETKB onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.ruzgarenerjisi.com.tr/ronesans-enerji/",
+    "not": "YEKA RES-3; 2024 sonu devreye alma hedefi. Enerji Atlası'nda kayıt yok.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        40.971,
+        34.801
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "baslik": "Sivas RES (YEKA RES-3, Kayalar)",
+    "musteri": "Rönesans Holding",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Sivas",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2023,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 49,
+    "ekBilgi": "7 × Nordex N163",
+    "kapsam": "YEKA kapsamında ön proje ve kati projeler; ETKB onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.ruzgarenerjisi.com.tr/ronesans-enerji/",
+    "not": "Ocak 2025'te üretime başladı. Enerji Atlası'nda kayıt yok.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.75,
+        37.015
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "baslik": "Kırşehir Lisanssız GES (Koyuneli)",
+    "musteri": "Rönesans Holding",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Kırşehir",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": null,
+    "mwm": 16.8,
+    "mwe": 15.6,
+    "ekBilgi": "MWp: 16,8",
+    "kapsam": "Lisanssız GES TEDAŞ projeleri ve onayları",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://ronesans.com/projeler/yatirim/kirsehir-lisanssiz-ges",
+    "not": "Rönesans: 16,8 MWp, 2025 devreye alma; TSKB haberi: 15,6 MW.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.146,
+        34.161
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "baslik": "Şanlıurfa HES Kapasite Artışı",
+    "musteri": "Rönesans Holding",
+    "kategori": "HES",
+    "santralTuru": "HES",
+    "il": "Şanlıurfa",
+    "ilce": "Haliliye",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 51,
+    "ekBilgi": "2 ünite (mevcut)",
+    "kapsam": "Kapasite artışı projeleri; ETKB onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Enerji Atlası",
+    "enerjiAtlasi": "https://www.enerjiatlasi.com/hidroelektrik/sanliurfa-hes.html",
+    "kaynak": null,
+    "not": "MWe değeri mevcut kurulu güç (51 MWe, 2006'dan beri işletmede); artış sonrası değer bulunamadı.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.167,
+        38.796
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "baslik": "5 Adet Lisanssız RES (İzmir)",
+    "musteri": "Rönesans Holding",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "İzmir",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 35,
+    "ekBilgi": "5 santral",
+    "kapsam": "Lisanssız RES projeleri; TEDAŞ onayları",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.santiye.com.tr/turkiye-nin-en-buyuk-lisanssiz-res-projesi-finansmani-tskb-ve-ronesans-enerji-den-54-4-milyon-euroluk-yeni-kredi-anlasmasi-8103.html",
+    "not": "Rönesans'ın İzmir'deki 35 MW lisanssız RES yatırımı (Ağustos 2025) — santral sayısı teyit edilmeli.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.419,
+        27.128
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "baslik": "Döşemealtı TM (İTM)",
+    "musteri": "Girişim Elektrik",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Antalya",
+    "ilce": "Döşemealtı",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "İTM kapsamında anahtar teslim TM proje hizmetleri; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": "TEİAŞ iletim tesisi; santral değil.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.023,
+        30.601
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "baslik": "Narlı TM (İTM)",
+    "musteri": "Girişim Elektrik",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Kahramanmaraş",
+    "ilce": "Pazarcık",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "İTM kapsamında anahtar teslim TM proje hizmetleri; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": "İl tahmini (Narlı/Pazarcık) — teyit edilmeli.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.489,
+        37.294
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "baslik": "Korkuteli TM (İTM)",
+    "musteri": "Girişim Elektrik",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Antalya",
+    "ilce": "Korkuteli",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "İTM kapsamında anahtar teslim TM proje hizmetleri; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.067,
+        30.197
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "baslik": "Şapdağı RES",
+    "musteri": "Barkan Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Balıkesir",
+    "ilce": "Havran",
+    "bolge": "Türkiye",
+    "yil": 2018,
+    "gerilimKv": "154/33",
+    "mwm": 57,
+    "mwe": 55,
+    "ekBilgi": "19 türbin",
+    "kapsam": "Kati proje dosyası ve onayları",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/balikesire-55-mwlik-sapdagi-res-kurulacak-24651h.htm",
+    "not": "Enerji Atlası'nda kayıt yok. İDK toplantısı Haziran 2018.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.558,
+        27.1
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "baslik": "Kayseri Yahyalı RES",
+    "musteri": "Bak Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Kayseri",
+    "ilce": "Yahyalı",
+    "bolge": "Türkiye",
+    "yil": 2015,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 91.5,
+    "ekBilgi": "27 türbin; tam kapasite 93 MWe",
+    "kapsam": "Kati projeler; ETKB onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Enerji Atlası",
+    "enerjiAtlasi": "https://www.enerjiatlasi.com/ruzgar/kayseri-yahyali-res.html",
+    "kaynak": null,
+    "not": "Lisans 07.09.2011, kısmi devreye alma 24.09.2016 (FC Enerji / Bak Enerji Üretimi A.Ş.).",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.1,
+        35.354
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "baslik": "Konyaray, Kılıçlar, Gaziray 154/27,5 kV TM'ler",
+    "musteri": "TCDD",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Konya / Gaziantep",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154/27,5",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "Demiryolu cer TM'leri",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.873,
+        32.492
+      ],
+      [
+        37.063,
+        37.379
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "baslik": "Taşpınar RES",
+    "musteri": "Galata Wind",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Bursa",
+    "ilce": "Mustafakemalpaşa",
+    "bolge": "Türkiye",
+    "yil": 2019,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 73,
+    "ekBilgi": "14 türbin",
+    "kapsam": "Kati projeler; ETKB onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Enerji Atlası",
+    "enerjiAtlasi": "https://www.enerjiatlasi.com/ruzgar/taspinar-res.html",
+    "kaynak": null,
+    "not": "İlk türbin 27.10.2020'de devreye alındı.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        40.035,
+        28.413
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "baslik": "Mersinli RES",
+    "musteri": "Yander Elektrik",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "İzmir",
+    "ilce": "Bayındır",
+    "bolge": "Türkiye",
+    "yil": 2019,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 55,
+    "ekBilgi": "13 × Nordex",
+    "kapsam": "Kati projeler; ETKB onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Enerji Atlası",
+    "enerjiAtlasi": "https://www.enerjiatlasi.com/ruzgar/mersinli-res.html",
+    "kaynak": null,
+    "not": "Sahibi Bomonti Elektrik, işletmeci Yander. Üretim 2020'de başladı.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.22,
+        27.648
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "baslik": "Elmacık RES",
+    "musteri": "Metgün Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Kırklareli",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": null,
+    "mwm": 70.8,
+    "mwe": 70,
+    "ekBilgi": "12 × Nordex N163/5.9",
+    "kapsam": "Trafo merkezi ve kati projeler",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.kapsulhaberajansi.com/enerji/elmacik-res-70-8-mw-kurulu-gucle-tam-kapasite-uretime-basladi-43019",
+    "not": "Tam kapasite 13.06.2026. Enerji Atlası'nda kayıt yok.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        41.737,
+        27.224
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "baslik": "Atakale RES TM",
+    "musteri": "Ataseven Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Kırıkkale",
+    "ilce": "Keskin",
+    "bolge": "Türkiye",
+    "yil": 2021,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 40,
+    "ekBilgi": "9 türbin; hedef 120 MWe",
+    "kapsam": "TM primer, sekonder ve inşaat projeleri; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Enerji Atlası",
+    "enerjiAtlasi": "https://www.enerjiatlasi.com/ruzgar/atakale-res.html",
+    "kaynak": null,
+    "not": "2021–2023 arası kısmen devreye alındı.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.674,
+        33.615
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "baslik": "Soğanlı RES TM",
+    "musteri": "Ataseven Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Bayburt",
+    "ilce": "Aydıntepe",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 69.8,
+    "ekBilgi": "21 türbin",
+    "kapsam": "TM primer, sekonder ve inşaat projeleri; onaylar",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.bayburtpostasi.com.tr/soganli-ruzgr-enerji-santralinin-kapasitesi-70-mwa-cikiyor",
+    "not": "Esyel Global (Ataseven Grubu). 30 → 69,8 MW kapasite artışı; 04.06.2026'da hizmete girdi.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        40.389,
+        40.147
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "baslik": "TT Ağrı GES TM",
+    "musteri": "Türk Telekom",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Ağrı",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "Malatya + Ağrı toplam 402 MWp",
+    "kapsam": "TM primer, sekonder ve inşaat projeleri; TEİAŞ onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.aa.com.tr/tr/ekonomi/turk-telekom-sivastaki-ges-yatirimini-5g-ile-istanbuldan-acti/3709701",
+    "not": "Ayrı kapasite açıklanmadı; 3 GES toplamı 530 MWp.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.719,
+        43.05
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "baslik": "TT Sivas GES TM",
+    "musteri": "Türk Telekom",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Sivas",
+    "ilce": "Zara",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "154",
+    "mwm": 128,
+    "mwe": null,
+    "ekBilgi": "MWp: 128",
+    "kapsam": "TM primer, sekonder ve inşaat projeleri; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.aa.com.tr/tr/ekonomi/turk-telekom-sivastaki-ges-yatirimini-5g-ile-istanbuldan-acti/3709701",
+    "not": "07.10.2025'te açıldı. MWm sütunundaki değer MWp'dir.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.897,
+        37.759
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "baslik": "TT Malatya GES 400 kV TM",
+    "musteri": "Türk Telekom",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Malatya",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "Malatya + Ağrı toplam 402 MWp",
+    "kapsam": "TM primer, sekonder ve inşaat projeleri; TEİAŞ onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://malatyahaber.com/haber/turk-telekom-malatyada-da-ges-yapacak",
+    "not": "Ayrı kapasite açıklanmadı.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.349,
+        38.319
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "baslik": "Eti Bakır Ağrı GES TM",
+    "musteri": "Cengiz Enerji",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Ağrı",
+    "ilce": "Doğubayazıt",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154/34,5",
+    "mwm": null,
+    "mwe": 45,
+    "ekBilgi": "77.575 panel",
+    "kapsam": "TM primer, sekonder ve inşaat projeleri; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://solarbaba.com/haber-mensis-enerjiden-agrida-dev-ges-projesi-eti-bakir-agri-geste-sona-dogru/",
+    "not": "Mayıs 2025'te tamamlanmak üzereydi.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.548,
+        44.079
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "baslik": "Eti Bakır Sivas GES TM",
+    "musteri": "Cengiz Enerji",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Sivas",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM primer, sekonder ve inşaat projeleri; TEİAŞ onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": "Kapasite bulunamadı (Eti Bakır-2 GES ile aynı olabilir — teyit edilmeli).",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.75,
+        37.015
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "baslik": "Arturna RES (YEKA RES-2)",
+    "musteri": "Enerjisa Üretim",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Muğla",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154",
+    "mwm": 92.4,
+    "mwe": null,
+    "ekBilgi": "Enercon E-138",
+    "kapsam": "Elektriksel tasarım, EİGM proje onayı; 154 kV TM tasarımı ve TEİAŞ onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.donanimhaber.com/enerjisa-dan-ebrd-finansmaniyla-250-mw-lik-ruzgar-enerjisi--200220",
+    "not": "EBRD'nin açıkladığı 92,4 MW (mekanik kabul edildi).",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.215,
+        28.364
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "baslik": "Falp RES (YEKA RES-2)",
+    "musteri": "Enerjisa Üretim",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Muğla",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154",
+    "mwm": 75.6,
+    "mwe": null,
+    "ekBilgi": "Enercon E-138",
+    "kapsam": "Elektriksel tasarım, EİGM proje onayı; 154 kV TM tasarımı ve TEİAŞ onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.donanimhaber.com/enerjisa-dan-ebrd-finansmaniyla-250-mw-lik-ruzgar-enerjisi--200220",
+    "not": "EBRD'nin açıkladığı 75,6 MW (mekanik kabul edildi).",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.215,
+        28.364
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "baslik": "Gaia RES (YEKA RES-2)",
+    "musteri": "Enerjisa Üretim",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Muğla",
+    "ilce": "Ula",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154",
+    "mwm": 84.6,
+    "mwe": 61,
+    "ekBilgi": "Enercon E-138",
+    "kapsam": "Elektriksel tasarım, EİGM proje onayı; 154 kV TM tasarımı ve TEİAŞ onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/enerjisanin-gaia-resine-48-yil-10-aylik-uretim-lisansi-63357h.htm",
+    "not": "Lisans 17.04.2025.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.103,
+        28.416
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "baslik": "Balkaya RES 400 kV TM",
+    "musteri": "Enerjisa Üretim",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Kırklareli",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": 340,
+    "ekBilgi": "Nordex; YEKA RES-2024",
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/enerjisa-balkaya-rese-epdkdan-49-yillik-uretim-lisansi-69316h.htm",
+    "not": "Lisans 23.07.2026; 2027 tamamlanma hedefi.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        41.737,
+        27.224
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "baslik": "Karaburun RES TM",
+    "musteri": "Enerjisa Üretim",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "İzmir",
+    "ilce": "Karaburun",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 235,
+    "ekBilgi": "83 türbin",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": "https://www.enerjiatlasi.com/ruzgar/karaburun-ruzgar-santrali.html",
+    "kaynak": null,
+    "not": "Enerji Atlası'ndaki Karaburun RES Alto Holding'e ait (2013); Enerjisa ile bağlantı teyit edilmeli.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.635,
+        26.51
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "baslik": "400 kV Tarsus OSB TM",
+    "musteri": "EMTA",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Mersin",
+    "ilce": "Tarsus",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onaylatılması",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.mersinportal.com/tarsus-osbnin-mersin-baglantisinda-kritik-asama-gecildi",
+    "not": "Tarsus OSB–Mersin 400 kV hattı için ÇED olumlu: 01.09.2026.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        36.916,
+        34.895
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "baslik": "Yeraltı Tip GIS TM",
+    "musteri": "TEİAŞ",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "Yeraltı tip GIS inşaat ve elektrik projeleri",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": null
+  },
+  {
+    "id": 33,
+    "baslik": "Payas 380 kV GIS TM",
+    "musteri": "Mensis Enerji",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Hatay",
+    "ilce": "Payas",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "380",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "GIS trafo merkezi inşaat ve elektrik projeleri",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        36.756,
+        36.215
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "baslik": "Soran 132 kV GIS TM",
+    "musteri": "Best Elektrik",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Erbil (Irak)",
+    "ilce": "Soran",
+    "bolge": "Dünya",
+    "yil": null,
+    "gerilimKv": "132",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "GIS trafo merkezi inşaat ve elektrik projeleri",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Irak",
+    "konum": [
+      [
+        36.653,
+        44.544
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "baslik": "New Azadi 132 kV GIS TM",
+    "musteri": "Best Elektrik",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Irak",
+    "ilce": "",
+    "bolge": "Dünya",
+    "yil": null,
+    "gerilimKv": "132",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "GIS trafo merkezi inşaat ve elektrik projeleri",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Irak",
+    "konum": null
+  },
+  {
+    "id": 36,
+    "baslik": "Al-Qayara 132/33 kV GIS TM",
+    "musteri": "Best Elektrik",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Ninova (Irak)",
+    "ilce": "Qayyarah",
+    "bolge": "Dünya",
+    "yil": null,
+    "gerilimKv": "132/33",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "GIS trafo merkezi inşaat ve elektrik projeleri",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Irak",
+    "konum": [
+      [
+        35.795,
+        43.293
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "baslik": "380 kV GIS TM",
+    "musteri": "Kroman Çelik",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Kocaeli",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "380",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "Çelik tesisi bağlantısı",
+    "kapsam": "GIS inşaat ve elektrik projeleri",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": "İl, Kroman Çelik tesis konumuna göre tahmin.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        40.765,
+        29.941
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "baslik": "Eskişehir 1 GES 400 kV TM",
+    "musteri": "Efor Holding",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Eskişehir",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "Eskişehir 1+2 toplam 260 MW (YEKA GES-2025)",
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjibulteni.com/2025/11/27/efor-holdingten-eskisehire-260-mwlik-dev-gunes-enerjisi-yatirimi/",
+    "not": "Efor'un Eskişehir 260 MW YEKA GES yatırımı; 1/2 ayrımı açıklanmadı.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.774,
+        30.519
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "baslik": "Eskişehir 2 GES 400 kV TM",
+    "musteri": "Efor Holding",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Eskişehir",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "Eskişehir 1+2 toplam 260 MW (YEKA GES-2025)",
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjibulteni.com/2025/11/27/efor-holdingten-eskisehire-260-mwlik-dev-gunes-enerjisi-yatirimi/",
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.774,
+        30.519
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "baslik": "Balıkesir 400 kV TM",
+    "musteri": "Efor Holding",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Balıkesir",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.647,
+        27.888
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "baslik": "400 kV Karaman GIS TM",
+    "musteri": "Yıldızlar Holding",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Karaman",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "GIS TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.181,
+        33.219
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "baslik": "Karaman DRES 400 kV GIS TM",
+    "musteri": "Yıldızlar Holding",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Karaman",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2026,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": 200,
+    "ekBilgi": "Depolama 221 MWh",
+    "kapsam": "GIS TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://yesilekonomi.com/ern-holding-ve-aksa-bess-karaman-dres-icin-anlasma-imzaladi/",
+    "not": "Bulunan Karaman DRES ERN Holding/Energen'e ait (Haziran 2026); Yıldızlar ile ilişki teyit edilmeli.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.181,
+        33.219
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "baslik": "400 kV Selvili TM",
+    "musteri": "TEİAŞ",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": null
+  },
+  {
+    "id": 44,
+    "baslik": "400 kV Seydişehir TM",
+    "musteri": "TEİAŞ",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Konya",
+    "ilce": "Seydişehir",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.419,
+        31.848
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "baslik": "Sultanlar GES 400 kV TM",
+    "musteri": "Kalyon",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Konya",
+    "ilce": "Karapınar",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": 522,
+    "mwe": 500,
+    "ekBilgi": "MWp: 522; YEKA GES-2024",
+    "kapsam": "400 kV TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.aa.com.tr/tr/ekonomi/karapinarda-500-megavatlik-yeni-geste-calismalar-basladi/3740627",
+    "not": "Kalyon G24 Karapınar GES (\"Sultanlar Şehri\" Karapınar) varsayıldı; Kasım 2025'te TM inşaatı sürüyordu. MWm sütunundaki değer MWp'dir.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.718,
+        33.548
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "baslik": "Ünsal DGES TM",
+    "musteri": "GD Enerji",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Antalya",
+    "ilce": "Gazipaşa",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 50,
+    "ekBilgi": "Depolamalı",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://gdenerji.com/unsal-depolamali-ges",
+    "not": "Şirket: Yellow Diamond Enerji (GD Enerji grubu).",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        36.268,
+        32.318
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "baslik": "AG Mars 4 TM",
+    "musteri": "Egesa",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": null
+  },
+  {
+    "id": 48,
+    "baslik": "Yeni DGES TM",
+    "musteri": "Egesa",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": "Depolamalı",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": null
+  },
+  {
+    "id": 49,
+    "baslik": "Iğdır DGES TM",
+    "musteri": "Egesa",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Iğdır",
+    "ilce": "Merkez",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154",
+    "mwm": 130,
+    "mwe": 95,
+    "ekBilgi": "Depolama 95 MWe / 95 MWh",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://yatirimlar.com/haber/spon-enerji-igdir-dges-projesi-icin-490-milyon-liralik-yatirim-yapacak_223332",
+    "not": "Bulunan Iğdır DGES SPON Enerji'ye ait (ÇED Ağustos 2024); Egesa ile ilişki teyit edilmeli.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.922,
+        44.047
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "baslik": "400 kV Kılıçlar GIS TM",
+    "musteri": "Kılıçlar Hurdacılık",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Eskişehir",
+    "ilce": "Sivrihisar",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "400",
+    "mwm": null,
+    "mwe": 87,
+    "ekBilgi": null,
+    "kapsam": "GIS TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/kiliclar-hurdacilik-eskisehirde-gunes-santrali-kuracak-62785h.htm",
+    "not": "Mensis kalemindeki Kılıçlar GES ile aynı santral.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.451,
+        31.537
+      ]
+    ],
+    "ayniSantral": 4
+  },
+  {
+    "id": 51,
+    "baslik": "ASO 2-3 OSB GIS TM",
+    "musteri": "ASO OSB",
+    "kategori": "TM",
+    "santralTuru": "TM",
+    "il": "Ankara",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "GIS TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.921,
+        32.854
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "baslik": "Çallıca GES TM (Burdur)",
+    "musteri": "Gülsan Holding",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Burdur",
+    "ilce": "Merkez",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154",
+    "mwm": 168,
+    "mwe": 120,
+    "ekBilgi": "MWp: 168",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/burdurda-120-mwlik-ges-kurulacak-61042h.htm",
+    "not": "120 MWe ÇED haberi 07.11.2024; 168 MW(p) şantiye paylaşımından. MWm sütunundaki değer MWp'dir.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.725,
+        30.289
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "baslik": "Gülsan Korkuteli GES TM",
+    "musteri": "Gülsan Holding",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Antalya",
+    "ilce": "Korkuteli",
+    "bolge": "Türkiye",
+    "yil": 2024,
+    "gerilimKv": "154",
+    "mwm": 75,
+    "mwe": 54.2,
+    "ekBilgi": "127.088 panel",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.antalyakorfez.com/korkutelide-o-firma-gesten-vazgecti",
+    "not": "Dikkat: ÇED süreci Kasım 2024'te şirket talebiyle sonlandırıldı — yayına almadan önce durumu teyit edin.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.067,
+        30.197
+      ]
+    ],
+    "gucGosterme": true
+  },
+  {
+    "id": 54,
+    "baslik": "Kerem RES TM",
+    "musteri": "Kırkağaç Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": null
+  },
+  {
+    "id": 55,
+    "baslik": "İstanbul RES TM",
+    "musteri": "Caba Holding",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "İstanbul",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        41.006,
+        28.976
+      ]
+    ]
+  },
+  {
+    "id": 56,
+    "baslik": "Traçim GES TM",
+    "musteri": "Caba Holding",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Şırnak",
+    "ilce": "Cizre",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 80,
+    "ekBilgi": "Bataryalı; 192.000 panel",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/tracim-sirnakta-gunes-santrali-kuracak-62362h.htm",
+    "not": "Haber 22.02.2025; lisanssız, öz tüketim.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.332,
+        42.185
+      ]
+    ]
+  },
+  {
+    "id": 57,
+    "baslik": "Horasan GES TM",
+    "musteri": "Kroman Çelik",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Erzurum",
+    "ilce": "Horasan",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 65,
+    "ekBilgi": "+45 MW Horasan-2 GES",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/kroman-celik-erzurumun-gunesiyle-uretecek-61258h.htm",
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        40.04,
+        42.169
+      ]
+    ]
+  },
+  {
+    "id": 58,
+    "baslik": "Arakonak GES TM",
+    "musteri": "Fernas",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Muş",
+    "ilce": "Bulanık",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "154",
+    "mwm": 89.8884,
+    "mwe": 60,
+    "ekBilgi": "Arakonak-1 + Arakonak-2 (2 × 30 MWe)",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "http://www.bulanik.gov.tr/bulanik-ilcesi-arakonak-koyu-arakonak-1-ges-448308-mwm30-mwe-3621-ha-ve-arakonak-2-ges-450576-mwm30-mwe-3622-ha-duyurusu",
+    "not": "Arakonak-1: 44,8308 MWm / 30 MWe; Arakonak-2: 45,0576 MWm / 30 MWe.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.092,
+        42.271
+      ]
+    ]
+  },
+  {
+    "id": 59,
+    "baslik": "Mersin DRES TM",
+    "musteri": "Aksa Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Mersin",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 100.08,
+    "ekBilgi": "Depolamalı",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjiekonomisi.com/mersindeki-depolamali-res-yatirimina-124-milyon-finansman/42831",
+    "not": "124 milyon $ finansman Temmuz 2026.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        36.798,
+        34.63
+      ]
+    ]
+  },
+  {
+    "id": 60,
+    "baslik": "Büyükkışla DRES TM",
+    "musteri": "Entek",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Ankara",
+    "ilce": "Şereflikoçhisar",
+    "bolge": "Türkiye",
+    "yil": 2023,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 99.9,
+    "ekBilgi": "21 türbin; depolama 99,9 MWh",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/ankarada-100-mwlik-buyukkisla-depolamali-res-kurulacak-55349h.htm",
+    "not": "Duyuru 22.08.2023.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.939,
+        33.544
+      ]
+    ]
+  },
+  {
+    "id": 61,
+    "baslik": "Eren DRES TM",
+    "musteri": "Entek",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Sivas",
+    "ilce": "Gürün",
+    "bolge": "Türkiye",
+    "yil": 2026,
+    "gerilimKv": "154",
+    "mwm": 60,
+    "mwe": 55,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://sivas.csb.gov.tr/sivas-ili-gurun-ilcesi-yenibektasli-kindiralak-gunes-ve-erdogankoyleri-mevkiinde-yaklasik-37-5-ha-buyuklugunde-entek-elektrik-uretim-a.s-tarafindangerceklestirilmesi-planlanan-eren-ruzgar-enerji-santrali-res-60-mwm-55-mwe-duyuru-461267",
+    "not": "Üretim lisansı 11.06.2026.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        38.799,
+        37.157
+      ]
+    ]
+  },
+  {
+    "id": 62,
+    "baslik": "Elmalı 1-2 GES TM",
+    "musteri": "Tüpraş",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Tekirdağ",
+    "ilce": "Malkara",
+    "bolge": "Türkiye",
+    "yil": 2025,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 40.5,
+    "ekBilgi": "Elmalı-1 20,50 MWe + Elmalı-2 20 MWe",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/tupras-tekirdagda-elmali-gesin-ikincisini-kuruyor-62846h.htm",
+    "not": "Lisanssız, öz tüketim.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        40.893,
+        26.902
+      ]
+    ]
+  },
+  {
+    "id": 63,
+    "baslik": "Yapı Kredi GES TM",
+    "musteri": "Yapı Kredi",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": null
+  },
+  {
+    "id": 64,
+    "baslik": "Ekinciler GES TM",
+    "musteri": "Ekinciler Demir Çelik",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Şanlıurfa",
+    "ilce": "Siverek",
+    "bolge": "Türkiye",
+    "yil": 2026,
+    "gerilimKv": "154",
+    "mwm": 42,
+    "mwe": null,
+    "ekBilgi": "MWp: 42 (2 × 21)",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.foreks.com/haber/detay/6ab3c3c695016b5817e5edcc/FRKS/tr/ekinciler-demir-celik-324-milyon-dolar-bedelle-42-mwp-anahtar-teslimi-ges-kurulum-sozlesmesi-imzaladi-23-09-26/",
+    "not": "Ekinciler'in Eskişehir'de 35,2 MWp'lik GES'i de var — hangisi olduğu teyit edilmeli. MWm sütunundaki değer MWp'dir.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.754,
+        39.318
+      ]
+    ]
+  },
+  {
+    "id": 65,
+    "baslik": "Hisar DRES TM",
+    "musteri": "Selenka Enerji",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Tekirdağ",
+    "ilce": "Saray",
+    "bolge": "Türkiye",
+    "yil": 2026,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": 90,
+    "ekBilgi": "Depolamalı",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Diğer kaynak",
+    "enerjiAtlasi": null,
+    "kaynak": "https://solarbaba.com/selenka-enerji-hisar-depolamali-ruzgar-enerji-santrali-icin-uretim-lisansini-ald/",
+    "not": "Üretim lisansı 22.04.2026.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        41.443,
+        27.921
+      ]
+    ]
+  },
+  {
+    "id": 66,
+    "baslik": "Sivas GES TM",
+    "musteri": "Selenka Enerji",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Sivas",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.75,
+        37.015
+      ]
+    ]
+  },
+  {
+    "id": 67,
+    "baslik": "Dökükdağı RES TM",
+    "musteri": "Betaş",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Antalya / Isparta / Konya",
+    "ilce": "Manavgat, Sütçüler, Beyşehir",
+    "bolge": "Türkiye",
+    "yil": 2019,
+    "gerilimKv": "154",
+    "mwm": 30,
+    "mwe": null,
+    "ekBilgi": "30 türbin",
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Tamamlanan",
+    "eslesme": "Olası eşleşme",
+    "enerjiAtlasi": null,
+    "kaynak": "https://www.enerjigunlugu.net/akhisar-enerji-30-mwlik-dokukdagi-res-kuracak-29986h.htm",
+    "not": "2018 haberinde yatırımcı Akhisar Enerji; Betaş ile ilişki teyit edilmeli.",
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        37.495,
+        30.981
+      ]
+    ]
+  },
+  {
+    "id": 68,
+    "baslik": "Kütahya RES TM",
+    "musteri": "İçdaş",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "Kütahya",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "yil": null,
+    "gerilimKv": "154",
+    "mwm": null,
+    "mwe": null,
+    "ekBilgi": null,
+    "kapsam": "TM projelerinin hazırlanması ve onayı",
+    "durum": "Devam Eden",
+    "eslesme": "Bulunamadı",
+    "enerjiAtlasi": null,
+    "kaynak": null,
+    "not": null,
+    "ulke": "Türkiye",
+    "konum": [
+      [
+        39.42,
+        29.986
+      ]
+    ]
+  },
+  {
+    "id": 69,
+    "baslik": "Karaman GES 400 kV",
+    "musteri": "SPI Energy Solutions",
+    "kategori": "GES",
+    "santralTuru": "GES",
+    "il": "Karaman",
+    "ilce": "",
+    "bolge": "Türkiye",
+    "ulke": "Türkiye",
+    "yil": null,
+    "gerilimKv": "400",
+    "mwm": 260,
+    "mwe": 260,
+    "ekBilgi": null,
+    "kapsam": "Danışmanlık ve saha kontrolü",
+    "durum": "Devam Eden",
+    "eslesme": "Firma bilgisi",
+    "enerjiAtlasi": null,
+    "kaynak": "https://spienergy.com.tr/",
+    "not": "Firma tarafından iletildi: 260 MWm/MWe, 400 kV.",
+    "konum": [
+      [
+        37.181,
+        33.219
+      ]
+    ]
+  },
+  {
+    "id": 70,
+    "baslik": "Gogni RES",
+    "musteri": "AG Energy",
+    "kategori": "RES",
+    "santralTuru": "RES",
+    "il": "İmereti",
+    "ilce": "Terjola – Tkibuli",
+    "bolge": "Dünya",
+    "ulke": "Gürcistan",
+    "yil": null,
+    "gerilimKv": null,
+    "mwm": null,
+    "mwe": 187,
+    "ekBilgi": null,
+    "kapsam": "Mühendislik ve proje hizmetleri",
+    "durum": "Devam Eden",
+    "eslesme": "Firma bilgisi",
+    "enerjiAtlasi": null,
+    "kaynak": "https://renewables.ge/companies/ag-energy-and-ming-yang-partner-on-187-mw-gogni-wind-farm/",
+    "not": "Gürcistan'ın planlanan ikinci büyük RES projesi (AG Energy – Ming Yang ortaklığı). VEKA'nın hizmet kapsamı teyit edilmeli.",
+    "konum": [
+      [
+        42.265,
+        42.985
+      ]
+    ]
+  }
+]
