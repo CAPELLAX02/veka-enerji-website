@@ -27,6 +27,7 @@ VEKA Enerji'nin kurumsal web sitesi. Düz HTML + Tailwind CSS ile yazılmış, d
 npm install
 npm run build        # proje verisini üretir, partial'ları sayfalara işler, CSS'i derler
 npm run serve        # http://localhost:3000
+npm run package      # yayın arşivi: archive.zip (aşağıya bakın)
 ```
 
 Çalışırken iki ayrı terminalde `npm run watch:css` ve `npm run watch:html` kullanılabilir.
@@ -67,7 +68,7 @@ Her sayfanın `<title>`'ı, meta açıklaması, canonical adresi, Open Graph / X
 - **Site haritası:** `sitemap.xml` her build'de sayfa listesinden ve güncel tarihle yeniden üretilir; `robots.txt` site haritasını gösterir.
 - **İkonlar:** `favicon.ico` (16/32/48 px), SVG favicon, Apple dokunmatik ikonu ve `site.webmanifest` (192/512 px).
 - **Paylaşım görselleri:** hizmet sayfaları ve projeler için `assets/img/og/` altında sayfaya özel 1200×630 görseller (`image` alanı); diğer sayfalar `assets/img/og-image.jpg` kullanır.
-- **Sunucu:** Apache / cPanel'de `.htaccess` http→https ve www→yalın alan adı yönlendirmesini, 404 sayfasını, sıkıştırmayı ve önbellek sürelerini ayarlar.
+- **Sunucu:** Apache / cPanel'de `.htaccess` http→https ve `vekaenerji.com`→`www.vekaenerji.com` yönlendirmesini, 404 sayfasını, sıkıştırmayı ve önbellek sürelerini ayarlar.
 
 Yeni bir sayfa eklerken `data/seo.json` içindeki `sayfalar` altına aynı dosya adıyla bir kayıt açmanız yeterli; build, kaydı olmayan sayfada hata verir.
 
@@ -86,13 +87,26 @@ Yeni bir sayfa eklerken `data/seo.json` içindeki `sayfalar` altına aynı dosya
 - [ ] Kariyer.net'teki ilanın doğrudan bağlantısı (şu an Kariyer.net'te "veka enerji" aramasına gidiyor).
 - [ ] KVKK aydınlatma metni hazırlanınca formlardaki onay kutularına bağlantı eklenmesi.
 
+## Yayına alma (cPanel)
+
+```bash
+npm run package      # build + archive.zip
+```
+
+`archive.zip`, sunucuya yüklenecek dosyaların tamamını içerir: tüm `.html` sayfaları, `assets/` (CSS, JS, görseller, haritalar), `favicon.ico`, `site.webmanifest`, `robots.txt`, `sitemap.xml` ve `.htaccess`. Kaynak ve geliştirme dosyaları (`src/`, `scripts/`, `data/`, `partials/`, `node_modules/`, `package.json`) sunucuya gitmez; sayfalar zaten derlenmiş hâldedir.
+
+1. cPanel → Dosya Yöneticisi → `public_html` klasöründe, **`.well-known` ve `cgi-bin` dışındaki** tüm eski dosyaları silin (gizli dosyaları görmek için *Ayarlar → Gizli dosyaları göster*).
+2. `archive.zip`'i `public_html` içine yükleyin, sağ tık → *Extract* ile aynı klasöre çıkarın (`index.html` doğrudan `public_html` altında olmalı).
+3. `archive.zip`'i sunucudan silin.
+4. `https://www.vekaenerji.com` ve `https://vekaenerji.com` adreslerini açıp yönlendirmenin, `https://www.vekaenerji.com/olmayan-sayfa` adresinde 404 sayfasının çalıştığını kontrol edin.
+
 ## Yayından sonra yapılacaklar (SEO)
 
-- [ ] **Google Search Console:** alan adını doğrulayın, `https://vekaenerji.com/sitemap.xml` adresini gönderin, eski sitedeki adreslerin 404 vermediğini "Sayfalar" raporundan izleyin.
+- [ ] **Google Search Console:** alan adını doğrulayın, `https://www.vekaenerji.com/sitemap.xml` adresini gönderin, eski sitedeki adreslerin 404 vermediğini "Sayfalar" raporundan izleyin.
 - [ ] **Bing Webmaster Tools:** Search Console'dan içe aktarın (Yandex için Yandex Webmaster).
 - [ ] **Google İşletme Profili:** "VEKA Enerji" adına, sitedeki adresle birebir aynı bilgilerle profil açın / doğrulayın; web sitesi olarak ana sayfayı girin.
-- [ ] **Sunucu:** Apache dışı bir sunucu kullanılıyorsa `.htaccess`'teki yönlendirme (http→https, www→yalın alan adı), sıkıştırma ve önbellek ayarlarını o sunucuda yapın.
-- [ ] **Bağlantılar:** müşteri ve iş ortaklarının sitelerinde, sektör rehberlerinde ve LinkedIn şirket sayfasında `vekaenerji.com` bağlantısı.
+- [ ] **Sunucu:** Apache dışı bir sunucu kullanılıyorsa `.htaccess`'teki yönlendirme (http→https, yalın alan adı→www), sıkıştırma ve önbellek ayarlarını o sunucuda yapın.
+- [ ] **Bağlantılar:** müşteri ve iş ortaklarının sitelerinde, sektör rehberlerinde ve LinkedIn şirket sayfasında `https://www.vekaenerji.com` bağlantısı.
 - [ ] **Zengin sonuç testi:** sayfaları [Rich Results Test](https://search.google.com/test/rich-results) ile kontrol edin (iş ilanı ve sayfa yolu sonuçları).
 
 ## Görseller

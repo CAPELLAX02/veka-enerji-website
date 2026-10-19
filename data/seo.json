@@ -1,7 +1,7 @@
 {
   "_aciklama": "Her sayfanın <title>, meta açıklaması, paylaşım görseli (image), paylaşım (Open Graph / X) etiketleri, yapılandırılmış verisi (JSON-LD), sayfa yolu (breadcrumb) ve sık sorulan soruları bu dosyadan üretilir (npm run build). Metinlerde {{mw}}, {{substations}}, {{projects}}, {{provinces}}, {{countries}}, {{countTM}}, {{countRES}}, {{countGES}}, {{mwRES}}, {{mwGES}} gibi yer tutucular proje verisinden hesaplanan güncel rakamlarla değiştirilir.",
   "site": {
-    "url": "https://vekaenerji.com",
+    "url": "https://www.vekaenerji.com",
     "name": "VEKA Enerji",
     "alternateName": [
       "VEKA ENERJİ",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vekaenerji.com/sitemap.xml
+Sitemap: https://www.vekaenerji.com/sitemap.xml
