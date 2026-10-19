@@ -3,10 +3,13 @@
 //  - marks the current page's nav links with aria-current="page"
 //  - builds an inline Lucide sprite containing only the icons referenced as #i-<name>
 //  - renders the reference logos from data/referanslar.json
+//  - writes per-page SEO (title, meta, Open Graph, JSON-LD), FAQ blocks, crawlable
+//    project tables and figures from data/seo.json + data/projeler.json, and sitemap.xml
 //
 // Pages stay plain, deployable HTML; this script only rewrites the marked regions.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import { headFor, faqFor, projectTable, fillStats, pages as seoPages, pageUrl } from './lib/seo.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
 const read = (p) => readFileSync(join(root, p), 'utf8');
@@ -68,6 +71,7 @@ const scanFiles = [
   'partials/header.html',
   'partials/footer.html',
   'partials/head.html',
+  'scripts/lib/seo.mjs',
   ...readdirSync(join(root, 'assets/js')).map((f) => `assets/js/${f}`),
 ];
 const used = new Set();
@@ -98,7 +102,21 @@ for (const page of pages) {
   html = region(html, 'head', head);
   html = region(html, 'sprite', sprite);
   for (const [name, content] of Object.entries(refRegions)) html = region(html, name, content);
+  html = region(html, 'seo', headFor(key));
+  html = region(html, 'faq', faqFor(key));
+  for (const t of ['all', 'TM', 'RES', 'GES', 'HES', 'EIH']) html = region(html, `projects-${t}`, projectTable(t));
+  html = fillStats(html);
   writeFileSync(join(root, page), html);
 }
 
-console.log(`${pages.length} pages, ${used.size} icons`);
+// --- sitemap.xml ----------------------------------------------------------------
+const today = new Date().toISOString().slice(0, 10);
+const urls = Object.entries(seoPages)
+  .filter(([key, p]) => !p.noindex && pages.includes(`${key}.html`))
+  .map(([key]) => `  <url>\n    <loc>${pageUrl(key)}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`);
+writeFileSync(
+  join(root, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`,
+);
+
+console.log(`${pages.length} pages, ${used.size} icons, ${urls.length} sitemap URLs`);

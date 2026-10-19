@@ -1,0 +1,460 @@
+{
+  "_aciklama": "Her sayfanın <title>, meta açıklaması, paylaşım görseli (image), paylaşım (Open Graph / X) etiketleri, yapılandırılmış verisi (JSON-LD), sayfa yolu (breadcrumb) ve sık sorulan soruları bu dosyadan üretilir (npm run build). Metinlerde {{mw}}, {{substations}}, {{projects}}, {{provinces}}, {{countries}}, {{countTM}}, {{countRES}}, {{countGES}}, {{mwRES}}, {{mwGES}} gibi yer tutucular proje verisinden hesaplanan güncel rakamlarla değiştirilir.",
+  "site": {
+    "url": "https://vekaenerji.com",
+    "name": "VEKA Enerji",
+    "alternateName": [
+      "VEKA ENERJİ",
+      "Veka Enerji Mühendislik"
+    ],
+    "slogan": "Enerjide yeni bir soluk",
+    "description": "Ankara merkezli enerji mühendislik firması. Trafo merkezleri, rüzgar (RES), güneş (GES) ve hidroelektrik (HES) santralleri ile enerji iletim hatlarında fizibilite, proje, onay, danışmanlık, müşavirlik ve taahhüt hizmetleri.",
+    "email": "info@vekaenerji.com",
+    "address": {
+      "streetAddress": "Aşağı Öveçler Mahallesi, Lizbon Caddesi No: 29/4",
+      "addressLocality": "Çankaya",
+      "addressRegion": "Ankara",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "latitude": 39.887,
+      "longitude": 32.8242
+    },
+    "areaServed": [
+      "Türkiye",
+      "Irak",
+      "Gürcistan"
+    ],
+    "knowsAbout": [
+      "Trafo merkezi projesi",
+      "154 kV trafo merkezi",
+      "380 kV trafo merkezi",
+      "400 kV trafo merkezi",
+      "GIS trafo merkezi",
+      "AIS trafo merkezi",
+      "Primer proje",
+      "Sekonder proje",
+      "Şalt sahası projesi",
+      "TEİAŞ proje onayı",
+      "Keşif, metraj ve teknik şartname",
+      "Rüzgar enerji santrali (RES) projesi",
+      "YEKA RES",
+      "Depolamalı RES (DRES)",
+      "Güneş enerji santrali (GES) projesi",
+      "Lisanssız GES",
+      "Depolamalı GES (DGES)",
+      "Hidroelektrik santral (HES) kapasite artışı",
+      "Enerji iletim hattı (ENH) projesi",
+      "Kamulaştırma",
+      "ETKB ön ve kati proje onayı",
+      "EİGM proje onayı",
+      "TEDAŞ proje onayı",
+      "Fizibilite raporu",
+      "Müşavirlik ve kontrollük",
+      "Test ve devreye alma"
+    ],
+    "image": "/assets/img/og-image.jpg",
+    "imageAlt": "VEKA Enerji — Trafo merkezi ve enerji santrali proje mühendisliği",
+    "logo": "/assets/img/logo-512.png"
+  },
+  "hizmetler": [
+    {
+      "ad": "Trafo Merkezi Projeleri",
+      "sayfa": "trafo-merkezi-projeleri"
+    },
+    {
+      "ad": "Rüzgar Enerji Santrali (RES) Projeleri",
+      "sayfa": "res-projeleri"
+    },
+    {
+      "ad": "Güneş Enerji Santrali (GES) Projeleri",
+      "sayfa": "ges-projeleri"
+    },
+    {
+      "ad": "Hidroelektrik Santral (HES) Projeleri",
+      "sayfa": "hes-projeleri"
+    },
+    {
+      "ad": "Enerji İletim Hattı (ENH) Projeleri",
+      "sayfa": "enerji-iletim-hatlari"
+    },
+    {
+      "ad": "Trafo Merkezi Taahhüt ve Montaj",
+      "sayfa": "hizmetler",
+      "bolum": "taahhut"
+    },
+    {
+      "ad": "Lisanssız Elektrik Üretim Danışmanlığı",
+      "sayfa": "hizmetler",
+      "bolum": "lisanssiz"
+    }
+  ],
+  "sayfalar": {
+    "index": {
+      "title": "VEKA Enerji | Trafo Merkezi, RES ve GES Proje Mühendisliği",
+      "description": "Ankara merkezli enerji mühendislik firması: 154–400 kV trafo merkezi, RES, GES ve HES projeleri, TEİAŞ, ETKB ve TEDAŞ onayları, taahhüt. {{substations}} TM projesi.",
+      "type": "WebPage",
+      "home": true
+    },
+    "hakkimizda": {
+      "title": "Hakkımızda | Ankara Enerji Mühendislik Firması | VEKA Enerji",
+      "description": "Trafo merkezi ve yenilenebilir enerji santrali projelerinde uzman, Ankara merkezli mühendislik şirketi VEKA Enerji: misyonumuz, vizyonumuz ve değerlerimiz.",
+      "type": "AboutPage",
+      "breadcrumb": [
+        [
+          "Kurumsal",
+          null
+        ],
+        [
+          "Hakkımızda",
+          "hakkimizda"
+        ]
+      ]
+    },
+    "hizmetler": {
+      "title": "Hizmetler | Trafo Merkezi, RES, GES, HES, ENH | VEKA Enerji",
+      "description": "Trafo merkezi primer–sekonder projeleri, RES ve GES ön/kati projeleri, HES kapasite artışı, ENH ve kamulaştırma, TEİAŞ, ETKB ve TEDAŞ onayları, taahhüt.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Hizmetlerimiz",
+          "hizmetler"
+        ]
+      ]
+    },
+    "trafo-merkezi-projeleri": {
+      "title": "Trafo Merkezi Projesi | 154–400 kV AIS ve GIS | VEKA Enerji",
+      "description": "154, 380 ve 400 kV AIS / GIS trafo merkezi projeleri: primer, sekonder, inşaat ve çelik tasarım, keşif-metraj-şartname, TEİAŞ onayı. {{substations}} TM referansı.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Hizmetlerimiz",
+          "hizmetler"
+        ],
+        [
+          "Trafo Merkezi Projeleri",
+          "trafo-merkezi-projeleri"
+        ]
+      ],
+      "service": {
+        "name": "Trafo Merkezi Projeleri",
+        "serviceType": "Trafo merkezi projelendirme, onay, müşavirlik ve taahhüt",
+        "description": "132 kV'tan 420 kV'a kadar AIS ve GIS trafo merkezlerinde primer, sekonder, inşaat ve çelik konstrüksiyon projeleri; keşif, metraj, teknik şartname, TEİAŞ onayı, müşavirlik ve taahhüt hizmetleri.",
+        "kapsam": [
+          "Primer proje",
+          "Sekonder proje",
+          "İnşaat projesi",
+          "Çelik konstrüksiyon tasarımı",
+          "Keşif, metraj ve teknik şartname",
+          "TEİAŞ proje onayı",
+          "Müşavirlik ve kontrollük",
+          "Taahhüt, test ve devreye alma"
+        ]
+      },
+      "faq": [
+        [
+          "Trafo merkezi projesi hangi bölümlerden oluşur?",
+          "Bir trafo merkezi projesi; tek hat şeması, yerleşim ve kesit planları ile topraklama ve yıldırımdan korunma tasarımını içeren primer proje; koruma, kontrol, ölçü ve SCADA sistemlerini kapsayan sekonder proje; kumanda binası, temeller ve kablo kanallarını içeren inşaat projesi ile portal ve teçhizat taşıyıcılarının çelik konstrüksiyon tasarımından oluşur. VEKA Enerji bu disiplinlerin tamamını keşif, metraj ve teknik şartnameleriyle birlikte hazırlar."
+        ],
+        [
+          "GIS trafo merkezi nedir, AIS trafo merkezinden farkı nedir?",
+          "AIS (hava yalıtımlı) trafo merkezlerinde şalt ekipmanları açık havada tesis edilir. GIS (gaz yalıtımlı) trafo merkezlerinde ise kesici, ayırıcı ve baralar yalıtkan gazla doldurulmuş metal muhafazalar içinde yer alır; bu sayede çok daha küçük bir alana sığar ve şehir içi, sanayi tesisi ya da yeraltı uygulamalarında tercih edilir. VEKA Enerji 132 kV'tan 400 kV'a kadar hem AIS hem GIS trafo merkezi projeleri hazırlamaktadır."
+        ],
+        [
+          "Sekonder proje nedir?",
+          "Sekonder proje; trafo merkezindeki koruma rölelerinin, kontrol ve kumanda sistemlerinin, ölçü devrelerinin, SCADA ve haberleşme altyapısının tasarlandığı projedir. Kumanda ve koruma panolarının yerleşimi, devre şemaları ve kablo listeleri bu kapsamda hazırlanır."
+        ],
+        [
+          "TEİAŞ proje onay süreci nasıl ilerler?",
+          "İletim sistemine bağlanacak trafo merkezlerinin projeleri, TEİAŞ'ın teknik şartname ve standartlarına uygun olarak hazırlanır ve TEİAŞ'ın ilgili birimlerinin incelemesine sunulur. İnceleme sonrasında istenen revizyonlar tamamlanarak proje onaylanır. VEKA Enerji; projelerin hazırlanmasından revizyonların yönetimine ve onayın alınmasına kadar süreci yatırımcı adına yürütür."
+        ],
+        [
+          "Hangi gerilim seviyelerinde trafo merkezi projesi hazırlıyorsunuz?",
+          "154/34,5 kV dağıtım ve santral trafo merkezlerinden 154/27,5 kV demiryolu cer trafo merkezlerine, 380 kV, 400 kV ve 420 kV iletim trafo merkezlerinden 132 kV GIS trafo merkezlerine kadar geniş bir gerilim aralığında proje deneyimimiz bulunmaktadır."
+        ],
+        [
+          "RES ve GES santralleri için trafo merkezi projesi hazırlıyor musunuz?",
+          "Evet. Rüzgar ve güneş enerji santrallerinin iletim sistemine bağlantısını sağlayan 154 kV ve 400 kV santral trafo merkezleri referanslarımızın önemli bir bölümünü oluşturur. Depolamalı RES ve GES (DRES, DGES) santrallerinin trafo merkezi projelerini de hazırlıyoruz."
+        ],
+        [
+          "Yurt dışında trafo merkezi projesi yapıyor musunuz?",
+          "Evet. Irak'ta Soran, New Azadi ve Al-Qayara 132 kV GIS trafo merkezlerinin inşaat ve elektrik projelerini hazırladık."
+        ],
+        [
+          "Trafo merkezlerinde taahhüt hizmeti veriyor musunuz?",
+          "Evet. Zemin etütleri, topraklama özgül direnç ölçümleri, inşaat, çelik, elektromekanik ve sekonder montaj ile test ve devreye alma hizmetlerini kapsayan taahhüt işleri de sunuyoruz."
+        ]
+      ],
+      "image": "/assets/img/og/og-trafo-merkezi-projeleri.jpg"
+    },
+    "res-projeleri": {
+      "title": "RES Projesi | Rüzgar Santrali Proje ve Onay | VEKA Enerji",
+      "description": "YEKA ve lisanssız RES projeleri: ön ve kati proje, elektriksel tasarım, ETKB ve EİGM onayı, 154–400 kV RES trafo merkezi. {{mwRES}} MW rüzgar santrali deneyimi.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Hizmetlerimiz",
+          "hizmetler"
+        ],
+        [
+          "RES Projeleri",
+          "res-projeleri"
+        ]
+      ],
+      "service": {
+        "name": "Rüzgar Enerji Santrali (RES) Projeleri",
+        "serviceType": "RES projelendirme ve onay",
+        "description": "YEKA ve lisanssız rüzgar enerji santrallerinde ön proje, kati proje, elektriksel tasarım, ETKB ve EİGM onayları, depolamalı RES (DRES) ve 154–400 kV RES trafo merkezi projeleri ile TEİAŞ onayı.",
+        "kapsam": [
+          "YEKA RES ön ve kati proje",
+          "Elektriksel tasarım ve EİGM proje onayı",
+          "ETKB onay süreçleri",
+          "RES trafo merkezi projesi ve TEİAŞ onayı",
+          "Lisanssız RES projeleri ve TEDAŞ onayı",
+          "Depolamalı RES (DRES) trafo merkezi projeleri"
+        ]
+      },
+      "faq": [
+        [
+          "RES projesi nedir?",
+          "RES (rüzgar enerji santrali) projesi; türbin yerleşimine göre santralin elektriksel altyapısının, iç saha orta gerilim dağıtım şebekesinin, şalt sahası ve bağlantı trafo merkezinin tasarlandığı ve ilgili kurumların onayına sunulduğu mühendislik çalışmalarının bütünüdür. Ön proje ve kati proje aşamalarından oluşur."
+        ],
+        [
+          "Kati proje ne demek?",
+          "Kati proje, santralin uygulamaya esas kesin projesidir. Ön proje onayının ardından tesisin elektrik ve inşaat detaylarıyla hazırlanır ve Enerji ve Tabii Kaynaklar Bakanlığı (ETKB) onayına sunulur. Santralin yapımı ve kabul süreçleri onaylı kati projeye göre yürütülür."
+        ],
+        [
+          "YEKA RES nedir?",
+          "YEKA (Yenilenebilir Enerji Kaynak Alanı), belirlenen alanlarda yarışmayla tahsis edilen büyük ölçekli yenilenebilir enerji projeleridir. VEKA Enerji; YEKA RES-2 ve YEKA RES-3 kapsamındaki santrallerin ön proje, kati proje ve trafo merkezi projelerinde görev almıştır."
+        ],
+        [
+          "Depolamalı RES (DRES) nedir?",
+          "Depolamalı rüzgar enerji santrali (DRES), rüzgar santraline entegre bir elektrik depolama tesisi içeren santraldir. Depolama ünitesi, üretilen enerjinin şebekeye daha dengeli verilmesine katkı sağlar. VEKA Enerji; Mersin, Büyükkışla, Eren, Hisar ve Karaman DRES projelerinin trafo merkezi projelerini hazırlamaktadır."
+        ],
+        [
+          "Lisanssız RES projeleri için hangi onaylar gerekir?",
+          "Lisanssız rüzgar santrallerinin projeleri, bağlantının yapılacağı dağıtım sistemi ve TEDAŞ mevzuatına göre hazırlanarak onaya sunulur. VEKA Enerji, lisanssız RES projelerinin hazırlanması ve TEDAŞ onay süreçlerini yönetmektedir."
+        ],
+        [
+          "RES projesi için mühendislik firması seçerken nelere dikkat edilmeli?",
+          "Projenin YEKA veya lisanssız olması, bağlantı gerilimi ve onay mercileri (ETKB, EİGM, TEİAŞ, TEDAŞ) farklı uzmanlıklar gerektirir. Santral projesini ve bağlantı trafo merkezini aynı ekip içinde tasarlayabilen, onay süreçlerinde deneyimli bir mühendislik firmasıyla çalışmak süreyi ve revizyon riskini azaltır."
+        ]
+      ],
+      "image": "/assets/img/og/og-res-projeleri.jpg"
+    },
+    "ges-projeleri": {
+      "title": "GES Projesi | Güneş Santrali Proje ve Onay | VEKA Enerji",
+      "description": "Lisanslı, lisanssız ve depolamalı (DGES) GES projeleri: fizibilite, bakanlık ve TEDAŞ onayları, 400 kV'a kadar GES trafo merkezi. {{mwGES}} MW güneş santrali.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Hizmetlerimiz",
+          "hizmetler"
+        ],
+        [
+          "GES Projeleri",
+          "ges-projeleri"
+        ]
+      ],
+      "service": {
+        "name": "Güneş Enerji Santrali (GES) Projeleri",
+        "serviceType": "GES projelendirme, onay ve danışmanlık",
+        "description": "Lisanslı, lisanssız ve depolamalı güneş enerji santrallerinde fizibilite, bakanlık ön ve kati proje onayı, TEDAŞ onayları, 154–400 kV GES trafo merkezi projeleri, danışmanlık, saha kontrolü ve geçici kabul.",
+        "kapsam": [
+          "Fizibilite raporu",
+          "Bakanlık ön ve kati proje onayı",
+          "Lisanssız GES TEDAŞ projeleri ve onayı",
+          "154 kV ve 400 kV GES trafo merkezi projeleri",
+          "Depolamalı GES (DGES) trafo merkezi projeleri",
+          "Danışmanlık, saha kontrolü ve geçici kabul"
+        ]
+      },
+      "faq": [
+        [
+          "GES projesi nedir?",
+          "GES (güneş enerji santrali) projesi; panel ve inverter yerleşiminden DC/AC elektrik tasarımına, orta gerilim dağıtımından şebeke bağlantısına kadar santralin elektriksel altyapısının tasarlandığı ve onay süreçlerine sunulduğu mühendislik çalışmasıdır."
+        ],
+        [
+          "Lisanssız GES projesi nasıl onaylanır?",
+          "Lisanssız GES projeleri, bağlantı görüşünün alınmasının ardından TEDAŞ ve dağıtım şirketi mevzuatına uygun olarak hazırlanır ve onaya sunulur. Onaylı projeye göre kurulan santral, kabul işlemlerinin ardından işletmeye alınır. VEKA Enerji bu süreçte proje hazırlığı ve onay takibini üstlenir."
+        ],
+        [
+          "Depolamalı GES (DGES) nedir?",
+          "Depolamalı güneş enerji santrali (DGES), GES'e entegre bir elektrik depolama tesisi içerir; böylece gün içinde üretilen enerjinin bir kısmı depolanarak şebekeye daha esnek biçimde verilebilir. VEKA Enerji; Ünsal, Iğdır ve Yeni DGES projelerinin trafo merkezi projelerini hazırlamaktadır."
+        ],
+        [
+          "GES için trafo merkezi ne zaman gerekir?",
+          "Büyük ölçekli güneş santralleri iletim sistemine yüksek gerilim seviyesinde bağlanır ve bunun için santrale ait bir trafo merkezi gerekir. VEKA Enerji, 400 kV'a kadar GES trafo merkezlerinin primer, sekonder ve inşaat projelerini hazırlayarak TEİAŞ onaylarını almaktadır."
+        ],
+        [
+          "Fizibilite raporu neleri kapsar?",
+          "Fizibilite raporu; sahanın teknik uygunluğunu, şebeke bağlantı imkânlarını, öngörülen kurulu güç ve üretimi, yatırım bileşenlerini ve proje takvimini bir araya getirerek yatırım kararına esas teşkil eder."
+        ],
+        [
+          "GES projelerinde hangi aşamalarda destek veriyorsunuz?",
+          "Fizibiliteden bakanlık ön ve kati proje onaylarına, TEDAŞ onaylarından santral trafo merkezine, saha kontrolünden geçici kabule kadar tüm aşamalarda destek veriyoruz. Örneğin Karaman'daki 260 MW'lık, 400 kV bağlantılı GES projesinde danışmanlık ve saha kontrolü hizmeti sunduk."
+        ]
+      ],
+      "image": "/assets/img/og/og-ges-projeleri.jpg"
+    },
+    "hes-projeleri": {
+      "title": "HES Projesi ve Kapasite Artışı | Hidroelektrik | VEKA Enerji",
+      "description": "Hidroelektrik santral (HES) kapasite artışı projeleri, ön ve kati proje hazırlığı, ETKB ve TEDAŞ onay süreçleri, fizibilite, danışmanlık ve geçici kabul.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Hizmetlerimiz",
+          "hizmetler"
+        ],
+        [
+          "HES Projeleri",
+          "hes-projeleri"
+        ]
+      ],
+      "service": {
+        "name": "Hidroelektrik Santral (HES) Projeleri",
+        "serviceType": "HES projelendirme ve kapasite artışı",
+        "description": "Hidroelektrik santrallerde kapasite artışı projeleri, bakanlık ön ve kati proje hazırlığı, ETKB ve TEDAŞ onay süreçleri, fizibilite, danışmanlık ve geçici kabul.",
+        "kapsam": [
+          "HES kapasite artışı projeleri",
+          "Bakanlık ön ve kati proje hazırlığı",
+          "ETKB onay süreçleri",
+          "TEDAŞ proje hazırlama ve onay",
+          "Fizibilite ve danışmanlık",
+          "Geçici kabul"
+        ]
+      },
+      "faq": [
+        [
+          "HES kapasite artışı nedir?",
+          "Kapasite artışı, işletmedeki bir hidroelektrik santralin kurulu gücünün yükseltilmesidir. Mevcut tesisin elektrik altyapısının yeni kapasiteye göre yeniden projelendirilmesini ve ilgili onayların alınmasını gerektirir."
+        ],
+        [
+          "HES kapasite artışı projeleri hangi kurumun onayına sunulur?",
+          "Kapasite artışı projeleri Enerji ve Tabii Kaynaklar Bakanlığı (ETKB) onayına sunulur. VEKA Enerji, Şanlıurfa HES kapasite artışı projelerini hazırlayarak ETKB onaylarını almıştır."
+        ],
+        [
+          "HES projelerinde hangi hizmetleri veriyorsunuz?",
+          "Fizibilite ve danışmanlık, bakanlık ön ve kati proje hazırlığı, ETKB ve TEDAŞ onay süreçleri, kapasite artışı projeleri ve geçici kabul hizmetleri sunuyoruz."
+        ]
+      ],
+      "image": "/assets/img/og/og-hes-projeleri.jpg"
+    },
+    "enerji-iletim-hatlari": {
+      "title": "Enerji İletim Hattı (ENH) ve Kamulaştırma | VEKA Enerji",
+      "description": "Yüksek gerilim enerji iletim ve nakil hattı (ENH) projeleri: güzergâh etüdü, harita ve profil, direk yerleşimi, kamulaştırma planları ve proje onayı.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Hizmetlerimiz",
+          "hizmetler"
+        ],
+        [
+          "Enerji İletim Hatları",
+          "enerji-iletim-hatlari"
+        ]
+      ],
+      "service": {
+        "name": "Enerji İletim Hattı (ENH) Projeleri",
+        "serviceType": "Enerji iletim ve nakil hattı etüt, kamulaştırma ve proje",
+        "description": "Yüksek gerilim enerji iletim ve nakil hatlarında güzergâh etüdü, harita ve profil çalışmaları, direk yerleşimi, kamulaştırma planları ve dosyaları ile proje onay süreçleri.",
+        "kapsam": [
+          "Güzergâh etüdü",
+          "Harita ve profil çalışmaları",
+          "Direk yerleşim projeleri",
+          "Kamulaştırma planları ve dosyaları",
+          "Proje onay süreçleri"
+        ]
+      },
+      "faq": [
+        [
+          "ENH projesi nedir?",
+          "ENH (enerji nakil hattı) projesi; elektrik enerjisinin santraller ve trafo merkezleri arasında iletilmesini sağlayan havai hatların güzergâhının belirlendiği, profil ve direk yerleşiminin yapıldığı ve kamulaştırma planlarıyla birlikte onaya sunulduğu mühendislik çalışmasıdır. Yüksek gerilim hatlar için enerji iletim hattı (EİH) ifadesi de kullanılır."
+        ],
+        [
+          "Enerji nakil hattı kamulaştırma süreci nasıl işler?",
+          "Kesinleşen güzergâh üzerindeki direk yerleri ve hat koridorundan etkilenen taşınmazlar harita çalışmalarıyla belirlenir; bu taşınmazlar için kamulaştırma planları ve dosyaları hazırlanarak ilgili kuruma sunulur. VEKA Enerji, güzergâh etüdünden kamulaştırma dosyalarının hazırlanmasına kadar süreci yürütür."
+        ],
+        [
+          "Güzergâh etüdünde nelere dikkat edilir?",
+          "Güzergâh; arazi yapısı, yerleşim alanları, mevcut altyapı, çevresel ve tarımsal kısıtlar ile kamulaştırma maliyetleri birlikte değerlendirilerek belirlenir. Amaç, teknik olarak güvenli ve ekonomik açıdan en uygun hattı oluşturmaktır."
+        ]
+      ],
+      "image": "/assets/img/og/og-enerji-iletim-hatlari.jpg"
+    },
+    "projeler": {
+      "title": "Referans Projeler | Trafo Merkezi, RES, GES | VEKA Enerji",
+      "description": "{{projects}} referans proje, {{substations}} trafo merkezi ve {{mw}} MW kurulu güç: Türkiye, Irak ve Gürcistan'daki TM, RES, GES ve HES projelerimiz harita ve listede.",
+      "type": "CollectionPage",
+      "breadcrumb": [
+        [
+          "Projeler",
+          "projeler"
+        ]
+      ],
+      "image": "/assets/img/og/og-projeler.jpg"
+    },
+    "referanslar": {
+      "title": "Referanslar | Enerjisa, Kalyon, Rönesans | VEKA Enerji",
+      "description": "Siemens, Goldwind, Tüpraş, Türk Telekom, Enerjisa, Kalyon, Rönesans, Cengiz, GAMA, Aksa ve TEİAŞ başta olmak üzere birlikte çalıştığımız firmalar.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Referanslar",
+          "referanslar"
+        ]
+      ]
+    },
+    "ekibimiz": {
+      "title": "Ekibimiz | Elektrik ve İnşaat Mühendisleri | VEKA Enerji",
+      "description": "Trafo merkezi ve enerji santrali projelerinde deneyimli elektrik, inşaat, mimari ve harita mühendislerinden oluşan VEKA Enerji ekibi ve uzmanlık alanları.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Kurumsal",
+          null
+        ],
+        [
+          "Ekibimiz",
+          "ekibimiz"
+        ]
+      ]
+    },
+    "kariyer": {
+      "title": "Elektrik Mühendisi İş İlanı | Kariyer | VEKA Enerji",
+      "description": "VEKA Enerji'de kariyer: Elektrik Mühendisi – Trafo Merkezi Saha Denetmeni açık pozisyonu. Başvurunuzu sayfadaki form ya da Kariyer.net üzerinden iletin.",
+      "type": "WebPage",
+      "breadcrumb": [
+        [
+          "Kurumsal",
+          null
+        ],
+        [
+          "Kariyer",
+          "kariyer"
+        ]
+      ],
+      "job": {
+        "title": "Elektrik Mühendisi – Trafo Merkezi Saha Denetmeni",
+        "datePosted": "2026-10-19",
+        "description": "<p>Projelendirmesini üstlendiğimiz trafo merkezlerinin sahada projeye, şartnamelere ve standartlara uygun şekilde inşa ve montajının denetimini yürütecek ekip arkadaşı arıyoruz.</p><p><strong>Aradığımız nitelikler</strong></p><ul><li>Üniversitelerin Elektrik veya Elektrik-Elektronik Mühendisliği bölümlerinden mezun</li><li>Trafo merkezi primer ve sekonder sistemleri hakkında bilgi sahibi</li><li>Proje okuma, saha takibi ve raporlama becerisine sahip</li><li>Proje sahalarında görev alabilecek, seyahat engeli bulunmayan</li></ul>"
+      }
+    },
+    "iletisim": {
+      "title": "İletişim ve Teklif | Çankaya, Ankara | VEKA Enerji",
+      "description": "Trafo merkezi, RES, GES ve HES projeleriniz için teklif alın. VEKA Enerji: Aşağı Öveçler Mah. Lizbon Cad. 29/4 Çankaya / Ankara · info@vekaenerji.com",
+      "type": "ContactPage",
+      "breadcrumb": [
+        [
+          "İletişim",
+          "iletisim"
+        ]
+      ]
+    },
+    "404": {
+      "title": "Sayfa bulunamadı | VEKA Enerji",
+      "description": "Aradığınız sayfa taşınmış ya da kaldırılmış olabilir.",
+      "noindex": true
+    }
+  }
+}

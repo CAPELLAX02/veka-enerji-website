@@ -7,7 +7,7 @@
     "build:projects": "node scripts/build-projects.mjs",
     "build:html": "node scripts/build-html.mjs",
     "build:css": "tailwindcss -i src/styles.css -o assets/css/styles.css --minify",
-    "build": "npm run build:projects && npm run build:html && npm run build:css",
+    "build": "npm run build:projects && npm run build:html && npm run build:css && node scripts/stamp-assets.mjs",
     "watch:css": "tailwindcss -i src/styles.css -o assets/css/styles.css --watch",
     "watch:html": "node --watch-path=partials --watch-path=scripts --watch-path=data scripts/build-html.mjs",
     "serve": "npx --yes serve -l 3000 ."
