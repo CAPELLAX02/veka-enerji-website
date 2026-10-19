@@ -179,6 +179,27 @@
     sections.forEach((s) => spy.observe(s));
   });
 
+  // --- Long tables: show the first rows, keep the rest in the DOM (crawlable) ------
+  document.querySelectorAll('[data-collapse]').forEach((box) => {
+    const limit = 560;
+    if (box.scrollHeight <= limit + 240) return;
+    const rows = box.querySelectorAll('tbody tr').length;
+    box.classList.add('relative', 'overflow-hidden');
+    box.style.maxHeight = `${limit}px`;
+    const fade = document.createElement('div');
+    fade.className = 'pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent';
+    box.appendChild(fade);
+    const wrap = document.createElement('div');
+    wrap.className = 'mt-6 text-center';
+    wrap.innerHTML = `<button type="button" class="btn btn-outline">Tüm projeleri göster${rows ? ` (${rows})` : ''} <svg class="icon"><use href="#i-chevron-down"/></svg></button>`;
+    box.after(wrap);
+    wrap.querySelector('button').addEventListener('click', () => {
+      box.style.maxHeight = '';
+      fade.remove();
+      wrap.remove();
+    });
+  });
+
   // --- Marquee: duplicate the track so the loop is seamless ----------------------
   document.querySelectorAll('[data-marquee-clone]').forEach((clone) => {
     clone.innerHTML = clone.previousElementSibling.innerHTML;
