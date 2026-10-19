@@ -72,7 +72,10 @@ const scanFiles = [
 ];
 const used = new Set();
 for (const f of scanFiles) {
-  for (const m of read(f).matchAll(/#i-([a-z0-9-]+)/g)) used.add(m[1]);
+  const text = read(f);
+  for (const m of text.matchAll(/#i-([a-z0-9-]+)/g)) used.add(m[1]);
+  // JS helpers reference icons as icon('name', …)
+  for (const m of text.matchAll(/\bicon\('([a-z0-9-]+)'/g)) used.add(m[1]);
 }
 const symbols = [...used].sort().map((name) => {
   const file = join(iconDir, `${name}.svg`);
