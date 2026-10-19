@@ -8,8 +8,13 @@ VEKA Enerji'nin kurumsal web sitesi. Düz HTML + Tailwind CSS ile yazılmış, d
 | --- | --- |
 | `index.html` | Ana sayfa — hero slider, rakamlar, hizmetler, çalışma modeli, proje haritası, en büyük ölçekli projeler, referans logoları |
 | `hakkimizda.html` | Hakkımızda, misyon, vizyon, değerler, kamu kurumları |
-| `hizmetler.html` | TM, RES, GES, HES, EİH (enerji iletim hatları), taahhüt, inşaat, lisanssız üretim |
-| `projeler.html` | Tamamlanan / devam eden projeler, tür filtreleri, arama, Türkiye & dünya haritası, kurulu güç dağılımı |
+| `hizmetler.html` | Hizmetler merkezi: TM, RES, GES, HES, EİH, taahhüt, inşaat, lisanssız üretim |
+| `trafo-merkezi-projeleri.html` | Trafo merkezi projeleri (154–420 kV AIS/GIS) — kapsam, süreç, referans tablosu, SSS |
+| `res-projeleri.html` | Rüzgar enerji santrali projeleri — kapsam, süreç, referans tablosu, SSS |
+| `ges-projeleri.html` | Güneş enerji santrali projeleri — kapsam, süreç, referans tablosu, SSS |
+| `hes-projeleri.html` | Hidroelektrik santral ve kapasite artışı projeleri |
+| `enerji-iletim-hatlari.html` | Enerji iletim / nakil hattı (ENH) etüt, kamulaştırma ve proje |
+| `projeler.html` | Tamamlanan / devam eden projeler, tür filtreleri, arama, Türkiye & bölge haritası, kurulu güç dağılımı, kategoriye göre tam referans listesi |
 | `referanslar.html` | Firmalar (sektördeki büyüklüğe göre) ve kamu kurumları |
 | `ekibimiz.html` | Ekip yaklaşımı, rakamlar ve uzmanlık alanları |
 | `kariyer.html` | Açık pozisyon (TM saha denetmeni), Kariyer.net yönlendirmesi ve başvuru formu |
@@ -45,13 +50,26 @@ Tüm proje verisi tek dosyada, referans listesi tablosuyla aynı sütunlarla (`b
 
 `npm run build` bu dosyadan `assets/js/projects-data.js`'i üretir; harita, filtreler, kartlar ve tüm rakamlar (toplam MW, proje / TM / il / ülke sayısı) buradan otomatik hesaplanır.
 
-**Kurulu güç kuralı:** MW değeri yalnızca `eslesme` alanı `Enerji Atlası`, `Diğer kaynak` veya `Firma bilgisi` olan projelerde gösterilir ve toplama katılır. `Olası eşleşme` satırlarının değerleri teyit edildikten sonra `eslesme` alanını güncelleyin (ya da `scripts/build-projects.mjs` içindeki `CONFIRMED_SOURCES` listesine ekleyin). Aynı santrale ait ikinci kalem `ayniSantral` ile işaretlenir ve toplamda bir kez sayılır; `gucGosterme: true` bir projenin gücünü gizler.
+**Kurulu güç kuralı:** MW değeri yalnızca `eslesme` alanı `Enerji Atlası`, `Diğer kaynak` veya `Firma bilgisi` olan projelerde gösterilir ve toplama katılır. `Olası eşleşme` satırlarının değerleri teyit edildikten sonra `eslesme` alanını güncelleyin (ya da `scripts/lib/projects.mjs` içindeki `CONFIRMED_SOURCES` listesine ekleyin). Aynı santrale ait ikinci kalem `ayniSantral` ile işaretlenir ve toplamda bir kez sayılır; `gucGosterme: true` bir projenin gücünü gizler.
 
 Projeler sayfası adres çubuğundan filtrelenebilir: `projeler.html?tur=TM`, `projeler.html?durum=devam`.
 
 ### Referanslar — `data/referanslar.json`
 
 `firmalar` listesi **sektördeki büyüklüğe göre** sıralıdır; sırayı değiştirmek için satırların yerini değiştirmeniz yeterli. Logo dosyaları `assets/img/references/` altındadır; `logo` alanı boş olan firma, adıyla (yazı olarak) gösterilir. Ana sayfadaki kayan logo bandı aynı listenin ilk `bantAdedi` logolu firmasından oluşur. Kamu kurumları (`kurumlar`) da aynı dosyadadır.
+
+### SEO — `data/seo.json`
+
+Her sayfanın `<title>`'ı, meta açıklaması, canonical adresi, Open Graph / X paylaşım etiketleri, yapılandırılmış verisi (JSON-LD) ve sık sorulan soruları bu dosyadan üretilir; build betiği sayfalardaki `<!-- @seo -->` ve `<!-- @faq -->` bölgelerini doldurur. Metinlerdeki `{{mw}}`, `{{substations}}` gibi yer tutucular proje verisinden hesaplanan güncel rakamlarla değiştirilir.
+
+- **Yapılandırılmış veri:** her sayfada firma (`ProfessionalService`), `WebSite` ve sayfa türü (`AboutPage`, `ContactPage`, `CollectionPage`…); iç sayfalarda `BreadcrumbList`; hizmet sayfalarında `Service` ve `FAQPage`; kariyer sayfasında Google İş İlanları için `JobPosting`.
+- **Taranabilir içerik:** proje tabloları ve rakamlar build sırasında doğrudan HTML'e yazılır (JavaScript çalışmadan da okunur).
+- **Site haritası:** `sitemap.xml` her build'de sayfa listesinden ve güncel tarihle yeniden üretilir; `robots.txt` site haritasını gösterir.
+- **İkonlar:** `favicon.ico` (16/32/48 px), SVG favicon, Apple dokunmatik ikonu ve `site.webmanifest` (192/512 px).
+- **Paylaşım görselleri:** hizmet sayfaları ve projeler için `assets/img/og/` altında sayfaya özel 1200×630 görseller (`image` alanı); diğer sayfalar `assets/img/og-image.jpg` kullanır.
+- **Sunucu:** Apache / cPanel'de `.htaccess` http→https ve www→yalın alan adı yönlendirmesini, 404 sayfasını, sıkıştırmayı ve önbellek sürelerini ayarlar.
+
+Yeni bir sayfa eklerken `data/seo.json` içindeki `sayfalar` altına aynı dosya adıyla bir kayıt açmanız yeterli; build, kaydı olmayan sayfada hata verir.
 
 ### Formlar
 
@@ -67,6 +85,15 @@ Projeler sayfası adres çubuğundan filtrelenebilir: `projeler.html?tur=TM`, `p
 - [ ] Logosu bulunamayan firmalar (yazı olarak gösteriliyor): Mensis Enerji, Barkan Enerji, Yander Elektrik, Best Elektrik.
 - [ ] Kariyer.net'teki ilanın doğrudan bağlantısı (şu an Kariyer.net'te "veka enerji" aramasına gidiyor).
 - [ ] KVKK aydınlatma metni hazırlanınca formlardaki onay kutularına bağlantı eklenmesi.
+
+## Yayından sonra yapılacaklar (SEO)
+
+- [ ] **Google Search Console:** alan adını doğrulayın, `https://vekaenerji.com/sitemap.xml` adresini gönderin, eski sitedeki adreslerin 404 vermediğini "Sayfalar" raporundan izleyin.
+- [ ] **Bing Webmaster Tools:** Search Console'dan içe aktarın (Yandex için Yandex Webmaster).
+- [ ] **Google İşletme Profili:** "VEKA Enerji" adına, sitedeki adresle birebir aynı bilgilerle profil açın / doğrulayın; web sitesi olarak ana sayfayı girin.
+- [ ] **Sunucu:** Apache dışı bir sunucu kullanılıyorsa `.htaccess`'teki yönlendirme (http→https, www→yalın alan adı), sıkıştırma ve önbellek ayarlarını o sunucuda yapın.
+- [ ] **Bağlantılar:** müşteri ve iş ortaklarının sitelerinde, sektör rehberlerinde ve LinkedIn şirket sayfasında `vekaenerji.com` bağlantısı.
+- [ ] **Zengin sonuç testi:** sayfaları [Rich Results Test](https://search.google.com/test/rich-results) ile kontrol edin (iş ilanı ve sayfa yolu sonuçları).
 
 ## Görseller
 
