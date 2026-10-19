@@ -1,8 +1,8 @@
 // Generates the static SVG maps used on the projects section.
 // Projection parameters are written to data-* attributes so the browser can
-// place project markers with the same math (see assets/js/map.js).
+// place project markers with the same math (see assets/js/projects.js).
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { geoMercator, geoEquirectangular, geoContains } from 'd3-geo';
+import { geoMercator } from 'd3-geo';
 import { feature } from 'topojson-client';
 
 const root = new URL('..', import.meta.url).pathname;
@@ -54,37 +54,75 @@ ${paths}
   console.log(`turkiye.svg  ${(svg.length / 1024).toFixed(1)} KB`);
 }
 
-// --- Dünya (dotted land, equirectangular) ----------------------------------
+// --- Bölge (countries, Mercator) --------------------------------------------
+// Europe, the Middle East and Central Asia — where the projects are. The browser
+// opens it zoomed on Eastern Europe / Türkiye / the Caucasus / the Middle East
+// (data-focus) and lets the visitor zoom and pan from there.
 {
-  const topo = JSON.parse(readFileSync(`${root}node_modules/world-atlas/countries-110m.json`, 'utf8'));
-  const countries = feature(topo, topo.objects.countries).features.filter((f) => f.id !== '010');
-  const turkey = countries.find((f) => f.id === '792');
+  const topo = JSON.parse(readFileSync(`${root}node_modules/world-atlas/countries-50m.json`, 'utf8'));
+  const countries = feature(topo, topo.objects.countries).features;
 
-  const W = 1000;
-  const H = 480;
-  const bounds = { type: 'MultiPoint', coordinates: [[-170, -56], [180, 80]] };
-  const proj = geoEquirectangular().fitExtent([[0, 0], [W, H]], bounds);
+  const W = 1600;
+  const extent = { west: -12, east: 82, south: 8, north: 66 };
+  const focus = { west: 17, east: 58, south: 27, north: 52 };
+  const corners = { type: 'MultiPoint', coordinates: [[extent.west, extent.south], [extent.east, extent.north]] };
+  const fit = geoMercator().fitWidth(W, corners);
+  const [, yTop] = fit([extent.west, extent.north]);
+  const [, yBottom] = fit([extent.west, extent.south]);
+  const H = Math.round(yBottom - yTop);
+  const proj = geoMercator().scale(fit.scale()).translate([fit.translate()[0], fit.translate()[1] - yTop]).clipExtent([[0, 0], [W, H]]);
   const [tx, ty] = proj.translate();
   const k = proj.scale();
 
-  const step = 7.5;
-  let dLand = '';
-  let dTr = '';
-  for (let y = step / 2; y < H; y += step) {
-    for (let x = step / 2; x < W; x += step) {
-      const p = proj.invert([x, y]);
-      if (!p || p[0] > 180) continue;
-      const hit = countries.some((f) => geoContains(f, p));
-      if (!hit) continue;
-      const seg = `M${r1(x)} ${r1(y)}h0`;
-      if (geoContains(turkey, p)) dTr += seg;
-      else dLand += seg;
+  // Stream the clipped geometry and decimate points closer than 0.6 units
+  const pathOf = (f) => {
+    let d = '';
+    let ring = [];
+    const flush = () => {
+      // Skip islets smaller than ~3 units; they add weight but are invisible at this scale
+      const xs = ring.map((p) => p[0]);
+      const ys = ring.map((p) => p[1]);
+      const big = Math.max(...xs) - Math.min(...xs) > 3 || Math.max(...ys) - Math.min(...ys) > 3;
+      if (ring.length >= 3 && big) d += 'M' + ring.map(([x, y]) => `${r1(x)} ${r1(y)}`).join('L') + 'Z';
+      ring = [];
+    };
+    const stream = proj.stream({
+      point(x, y) {
+        const last = ring[ring.length - 1];
+        if (!last || Math.hypot(x - last[0], y - last[1]) >= 1.4) ring.push([x, y]);
+      },
+      lineStart() { ring = []; },
+      lineEnd: flush,
+      polygonStart() {},
+      polygonEnd() {},
+      sphere() {},
+    });
+    const g = f.geometry;
+    const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+    for (const poly of polys) {
+      stream.polygonStart();
+      for (const r of poly) {
+        stream.lineStart();
+        for (const c of r.slice(0, -1)) stream.point(c[0], c[1]);
+        stream.lineEnd();
+      }
+      stream.polygonEnd();
     }
-  }
+    return d;
+  };
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" data-projection="equirectangular" data-k="${k.toFixed(4)}" data-tx="${tx.toFixed(4)}" data-ty="${ty.toFixed(4)}" role="img" aria-label="Dünya haritası">
-<path class="map-dots" d="${dLand}"/>
-<path class="map-dots map-dots--home" d="${dTr}"/>
+  const [fx0, fy0] = proj([focus.west, focus.north]);
+  const [fx1, fy1] = proj([focus.east, focus.south]);
+  const paths = countries
+    .map((f) => [f, pathOf(f)])
+    .filter(([, d]) => d)
+    .map(([f, d]) => `<path data-country="${f.id}" d="${d}"/>`)
+    .join('\n');
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" data-projection="mercator" data-k="${k.toFixed(4)}" data-tx="${tx.toFixed(4)}" data-ty="${ty.toFixed(4)}" data-focus="${r1(fx0)} ${r1(fy0)} ${r1(fx1 - fx0)} ${r1(fy1 - fy0)}" role="img" aria-label="Avrupa, Orta Doğu ve Asya haritası">
+<g class="map-provinces">
+${paths}
+</g>
 </svg>
 `;
   writeFileSync(`${outDir}/dunya.svg`, svg);

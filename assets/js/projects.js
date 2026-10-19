@@ -257,13 +257,163 @@
       <p class="mt-2 text-xs font-medium ${p.status === 'devam' ? 'text-amber-600' : 'text-emerald-600'}">${STATUS[p.status].label}</p>`;
   };
 
+  // Pan & zoom for the map stage: drag / two-finger pinch / Ctrl+wheel / double-click / buttons.
+  // The canvas is transformed with CSS; markers counter-scale via --k so they keep their size.
+  const COUNTRY_IDS = { Türkiye: '792', Irak: '368', Gürcistan: '268' };
+  const coarse = window.matchMedia('(pointer: coarse)').matches;
+
+  const createZoom = (stage, onChange) => {
+    let canvas = null;
+    let cw = 1;
+    let ch = 1;
+    let focus = null;
+    let k = 1;
+    let x = 0;
+    let y = 0;
+    const size = () => [stage.clientWidth, stage.clientHeight];
+    const minK = () => { const [w, h] = size(); return Math.min(w / cw, h / ch); };
+    const maxK = () => Math.max(minK(), 1) * 8;
+
+    const apply = () => {
+      if (!canvas) return;
+      const [w, h] = size();
+      k = Math.min(Math.max(k, minK()), maxK());
+      const sw = cw * k;
+      const sh = ch * k;
+      x = sw <= w ? (w - sw) / 2 : Math.min(0, Math.max(w - sw, x));
+      y = sh <= h ? (h - sh) / 2 : Math.min(0, Math.max(h - sh, y));
+      canvas.style.transform = `translate(${x}px, ${y}px) scale(${k})`;
+      canvas.style.setProperty('--k', k);
+      onChange?.();
+    };
+    const fit = () => {
+      const [w, h] = size();
+      if (focus) {
+        const [fx, fy, fw, fh] = focus;
+        k = Math.min(w / fw, h / fh);
+        x = w / 2 - (fx + fw / 2) * k;
+        y = h / 2 - (fy + fh / 2) * k;
+      } else {
+        k = minK();
+      }
+      apply();
+    };
+    const zoomAt = (px, py, factor) => {
+      const nk = Math.min(Math.max(k * factor, minK()), maxK());
+      x = px - (px - x) * (nk / k);
+      y = py - (py - y) * (nk / k);
+      k = nk;
+      apply();
+    };
+    const local = (e) => { const r = stage.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+
+    // Pointer gestures
+    const pts = new Map();
+    let pinch = null;
+    let moved = false;
+    let travel = 0;
+    let swallowClickUntil = 0;
+    stage.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      if (e.target.closest('[data-zoom-ui]')) return;
+      pts.set(e.pointerId, [e.clientX, e.clientY]);
+      if (pts.size === 1) { moved = false; travel = 0; }
+    });
+    stage.addEventListener('pointermove', (e) => {
+      const prev = pts.get(e.pointerId);
+      if (!prev) return;
+      const cur = [e.clientX, e.clientY];
+      pts.set(e.pointerId, cur);
+      if (pts.size === 1) {
+        const dx = cur[0] - prev[0];
+        const dy = cur[1] - prev[1];
+        travel += Math.abs(dx) + Math.abs(dy);
+        if (!moved && travel > 6) {
+          moved = true;
+          stage.dataset.dragging = 'true';
+          try { stage.setPointerCapture(e.pointerId); } catch { /* pointer already released */ }
+        }
+        if (moved) { x += dx; y += dy; apply(); }
+      } else if (pts.size === 2) {
+        const [a, b] = [...pts.values()];
+        const r = stage.getBoundingClientRect();
+        const mid = [(a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top];
+        const dist = Math.hypot(a[0] - b[0], a[1] - b[1]);
+        if (pinch) {
+          x += mid[0] - pinch.mid[0];
+          y += mid[1] - pinch.mid[1];
+          zoomAt(mid[0], mid[1], dist / pinch.dist);
+        }
+        pinch = { mid, dist };
+        moved = true;
+        stage.dataset.zoomed = 'true';
+      }
+    });
+    const end = (e) => {
+      if (!pts.delete(e.pointerId)) return;
+      if (pts.size < 2) pinch = null;
+      if (!pts.size) {
+        delete stage.dataset.dragging;
+        // The click the browser fires right after a drag must not open a marker
+        if (moved) swallowClickUntil = performance.now() + 350;
+        moved = false;
+      }
+    };
+    stage.addEventListener('pointerup', end);
+    stage.addEventListener('pointercancel', end);
+    stage.addEventListener('click', (e) => {
+      if (performance.now() < swallowClickUntil && !e.target.closest('[data-zoom-ui]')) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      swallowClickUntil = 0;
+    }, true);
+
+    stage.addEventListener('wheel', (e) => {
+      if (!e.ctrlKey && !e.metaKey) return; // plain wheel keeps scrolling the page
+      e.preventDefault();
+      const [px, py] = local(e);
+      zoomAt(px, py, Math.exp(-e.deltaY * 0.004));
+      stage.dataset.zoomed = 'true';
+    }, { passive: false });
+    stage.addEventListener('dblclick', (e) => {
+      if (e.target.closest('[data-zoom-ui]')) return;
+      const [px, py] = local(e);
+      zoomAt(px, py, 2);
+      stage.dataset.zoomed = 'true';
+    });
+
+    return {
+      mount(c, w, h, f) { canvas = c; cw = w; ch = h; focus = f; fit(); },
+      zoomBy(f) { const [w, h] = size(); zoomAt(w / 2, h / 2, f); stage.dataset.zoomed = 'true'; },
+      fit,
+    };
+  };
+
+  const zoomUi = (dark) => {
+    const btn = `grid size-8 place-items-center transition sm:size-9 ${dark ? 'text-white hover:bg-white/10' : 'text-navy-700 hover:bg-navy-50'}`;
+    return `
+      <div data-zoom-ui class="absolute right-2 bottom-2 z-[5] flex overflow-hidden rounded-xl shadow-lg ring-1 backdrop-blur sm:right-3 sm:bottom-3 ${dark ? 'bg-navy-900/80 ring-white/10' : 'bg-white/95 ring-navy-900/10'}">
+        <button type="button" class="${btn}" data-zoom="out" aria-label="Uzaklaştır">${icon('minus', 'icon size-4')}</button>
+        <button type="button" class="${btn} border-x ${dark ? 'border-white/10' : 'border-navy-100'}" data-zoom="in" aria-label="Yakınlaştır">${icon('plus', 'icon size-4')}</button>
+        <button type="button" class="${btn}" data-zoom="reset" aria-label="Görünümü sıfırla">${icon('scan', 'icon size-4')}</button>
+      </div>
+      <p data-zoom-ui class="pointer-events-none absolute top-2 left-2 z-[5] rounded-full px-3 py-1 text-[11px] font-medium transition-opacity duration-500 sm:top-3 sm:left-3 ${dark ? 'bg-navy-900/70 text-navy-200' : 'bg-white/90 text-navy-500'}" data-zoom-hint>
+        ${coarse ? 'İki parmakla yakınlaştırın' : 'Ctrl + tekerlek ile yakınlaştırın, sürükleyerek gezinin'}
+      </p>`;
+  };
+
   document.querySelectorAll('[data-project-map]').forEach((root) => {
     const stage = root.querySelector('[data-map-stage]');
     const tooltip = root.querySelector('[data-map-tooltip]');
     const viewButtons = root.querySelectorAll('[data-map-view]');
+    const dark = root.classList.contains('map-dark');
     const views = { tr: 'assets/maps/turkiye.svg', world: 'assets/maps/dunya.svg' };
     let view = root.dataset.view || 'tr';
     let current = projects.filter(matches);
+    let token = 0;
+
+    stage.classList.add('overflow-hidden', 'touch-pan-y', 'select-none', 'rounded-2xl', 'cursor-grab', 'data-[dragging=true]:cursor-grabbing');
 
     const hideTooltip = () => tooltip && (tooltip.dataset.open = 'false');
     const showTooltip = (marker, html) => {
@@ -280,21 +430,31 @@
       if (top < 8) top = m.bottom - s.top + 12;
       tooltip.style.transform = `translate(${left}px, ${top}px)`;
     };
+    const zoom = createZoom(stage, hideTooltip);
 
+    const place = (x, y, P) => `left:${(x / P.width) * 100}%;top:${(y / P.height) * 100}%;scale:calc(1 / var(--k, 1))`;
     const markerHtml = (p, x, y, P) => `
-      <button type="button" class="map-marker group/m absolute -translate-x-1/2 -translate-y-1/2 p-1 focus:outline-none sm:p-1.5" style="left:${(x / P.width) * 100}%;top:${(y / P.height) * 100}%" data-id="${p.id}" aria-label="${esc(p.name)} — ${esc(p.client)}">
+      <button type="button" class="map-marker group/m absolute -translate-x-1/2 -translate-y-1/2 p-1 focus:outline-none sm:p-1.5" style="${place(x, y, P)}" data-id="${p.id}" aria-label="${esc(p.name)} — ${esc(p.client)}">
         ${p.status === 'devam' ? `<span class="absolute inset-1 rounded-full animate-ping-slow sm:inset-1.5" style="background:${TYPES[p.type].color}"></span>` : ''}
         <span class="relative block size-2.5 rounded-full ring-2 ring-white shadow-md transition-transform duration-300 group-hover/m:scale-150 group-focus-visible/m:scale-150 sm:size-3.5 sm:ring-[2.5px]" style="background:${TYPES[p.type].color}"></span>
       </button>`;
 
+    let lastWidth = 0;
     const draw = async () => {
-      stage.innerHTML = await loadSvg(views[view]);
-      const svg = stage.querySelector('svg');
+      const mine = ++token;
+      const markup = await loadSvg(views[view]);
+      if (mine !== token) return;
+
+      const wide = window.matchMedia('(min-width: 640px)').matches;
+      stage.style.aspectRatio = view === 'tr' ? (wide ? '1000 / 440' : '16 / 10') : wide ? '16 / 9' : '1 / 1';
+      stage.innerHTML = `<div class="map-canvas absolute top-0 left-0 origin-top-left">${markup}</div>${zoomUi(dark)}`;
+      const canvas = stage.firstElementChild;
+      const svg = canvas.querySelector('svg');
       svg.classList.add('block', 'h-auto', 'w-full');
       const P = projector(svg);
       const layer = document.createElement('div');
       layer.className = 'absolute inset-0';
-      stage.appendChild(layer);
+      canvas.appendChild(layer);
 
       const located = current.filter((p) => p.points);
       if (view === 'tr') {
@@ -306,12 +466,14 @@
       } else {
         const abroad = located.filter((p) => p.country !== HOME);
         const home = current.filter((p) => p.country === HOME);
+        const active = new Set(current.map((p) => COUNTRY_IDS[p.country]));
+        svg.querySelectorAll('[data-country]').forEach((path) => path.classList.toggle('is-active', active.has(path.dataset.country)));
         const items = abroad.flatMap((p) => p.points.map(([la, lo]) => { const [x, y] = P.xy(la, lo); return { p, x, y }; }));
         const [hx, hy] = P.xy(39, 35);
         layer.innerHTML =
           spread(items, 6).map(({ p, x, y }) => markerHtml(p, x, y, P)).join('') +
           (home.length
-            ? `<button type="button" class="absolute -translate-x-1/2 -translate-y-1/2" style="left:${(hx / P.width) * 100}%;top:${(hy / P.height) * 100}%" data-home aria-label="Türkiye — ${home.length} proje, haritayı yakınlaştır">
+            ? `<button type="button" class="absolute -translate-x-1/2 -translate-y-1/2" style="${place(hx, hy, P)}" data-home aria-label="Türkiye — ${home.length} proje, Türkiye haritasını aç">
                  <span class="absolute inset-2 rounded-full bg-brand-400 animate-ping-slow"></span>
                  <span class="relative grid size-11 place-items-center rounded-full bg-brand-500 font-display text-sm font-bold text-white shadow-lg ring-4 ring-white/80">${home.length}</span>
                </button>`
@@ -328,7 +490,26 @@
         m.addEventListener('blur', hideTooltip);
       });
       layer.querySelector('[data-home]')?.addEventListener('click', () => setView('tr'));
+
+      stage.querySelectorAll('[data-zoom]').forEach((b) =>
+        b.addEventListener('click', () => {
+          if (b.dataset.zoom === 'reset') zoom.fit();
+          else zoom.zoomBy(b.dataset.zoom === 'in' ? 1.6 : 1 / 1.6);
+        }),
+      );
+
+      const width = stage.clientWidth;
+      lastWidth = width;
+      canvas.style.width = `${width}px`;
+      const focusAttr = svg.dataset.focus?.split(' ').map(Number);
+      const scale = width / P.width;
+      zoom.mount(canvas, width, width * (P.height / P.width), focusAttr ? focusAttr.map((v) => v * scale) : null);
     };
+
+    // Re-fit when the stage width changes (rotation, window resize)
+    new ResizeObserver(() => {
+      if (stage.clientWidth && Math.abs(stage.clientWidth - lastWidth) > 1) draw();
+    }).observe(stage);
 
     const setView = (v) => {
       view = v;

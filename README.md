@@ -31,7 +31,7 @@ npm run serve        # http://localhost:3000
 - **Ortak parçalar** — `partials/head.html`, `header.html`, `footer.html` dosyaları, `scripts/build-html.mjs` tarafından her sayfadaki `<!-- @head -->…<!-- /@head -->` gibi işaretlerin arasına yazılır. Menüde aktif sayfa otomatik işaretlenir. Header/footer'ı değiştirmek için yalnızca `partials/` altını düzenleyip `npm run build` çalıştırın.
 - **İkonlar** — [Lucide](https://lucide.dev) ikon seti. Sayfada `<svg class="icon"><use href="#i-sun" /></svg>` yazmanız yeterli; build betiği kullanılan ikonları bulup sayfaya satır içi sprite olarak ekler.
 - **Stiller** — `src/styles.css` (Tailwind v4 teması: marka renkleri, fontlar, bileşen sınıfları) → `assets/css/styles.css`.
-- **Haritalar** — `scripts/build-maps.mjs`, il sınırlarından (`data/geo/tr-provinces.json`) ve Natural Earth verisinden `assets/maps/*.svg` üretir. Yalnızca harita görünümü değişecekse `npm run build:maps` çalıştırılır.
+- **Haritalar** — `scripts/build-maps.mjs`, il sınırlarından (`data/geo/tr-provinces.json`) Türkiye haritasını, Natural Earth ülke sınırlarından Avrupa–Orta Doğu–Orta Asya bölge haritasını (`assets/maps/*.svg`) üretir. Bölge haritası Doğu Avrupa / Türkiye / Kafkasya / Orta Doğu odaklı açılır; iki harita da iki parmakla, Ctrl + tekerlekle, çift tıklamayla ve +/− butonlarıyla yakınlaştırılıp sürüklenebilir. Yalnızca harita görünümü değişecekse `npm run build:maps` çalıştırılır.
 - **Fontlar** — Space Grotesk (başlıklar), IBM Plex Sans (metin), IBM Plex Mono (teknik etiketler) — Google Fonts.
 
 ## İçerik güncelleme
